@@ -43,19 +43,19 @@ const FadeCarousel = () => {
       <div className={styles.fade__viewport} ref={emblaRef}>
         <div className={styles.fade__container}>
           <div className={`${styles.fade__slide} ${selectedIndex === 0 ? styles.isSelected : ''}`}>
-            <img className="" src="/assets/images/food/wings.webp" alt="Album one" />
+            <img className="" src="/Arcade-Time/assets/images/food/wings.webp" alt="Album one" />
           </div>
           <div className={`${styles.fade__slide} ${selectedIndex === 1 ? styles.isSelected : ''}`}>
-            <img className="" src="/assets/images/food/sliders.jpg" alt="Album two" />
+            <img className="" src="/Arcade-Time/assets/images/food/sliders.jpg" alt="Album two" />
           </div>
           <div className={`${styles.fade__slide} ${selectedIndex === 2 ? styles.isSelected : ''}`}>
-            <img className="" src="/assets/images/food/alfredo.jpeg" alt="Album three" />
+            <img className="" src="/Arcade-Time/assets/images/food/alfredo.jpeg" alt="Album three" />
           </div>
           <div className={`${styles.fade__slide} ${selectedIndex === 3 ? styles.isSelected : ''}`}>
-            <img className="" src="/assets/images/food/margaritas.jpg" alt="Album four" />
+            <img className="" src="/Arcade-Time/assets/images/food/margaritas.jpg" alt="Album four" />
           </div>
           <div className={`${styles.fade__slide} ${selectedIndex === 4 ? styles.isSelected : ''}`}>
-            <img className="" src="/assets/images/food/funnel-cake.png" alt="Album five" />
+            <img className="" src="/Arcade-Time/assets/images/food/funnel-cake.png" alt="Album five" />
           </div>
         </div>
       </div>

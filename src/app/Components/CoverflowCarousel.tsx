@@ -17,13 +17,13 @@ class CoverflowCarousel extends Component<{}, { active: number }> {
                     <div className='w-[244px] h-[244px] p-4 border-2 border-black rounded-lg bg-cover bg-no-repeat flex flex-col bg-white'>
                         <div className='w-full flex h-[25%]'>
                             <div className='w-4/5 flex justify-left items-center'>
-                                <div className='flex justify-center items-center'><img alt="" src='/assets/reviews/Liam-Anderson.png' className='w-12 h-12'/></div>
+                                <div className='flex justify-center items-center'><img alt="" src='/Arcade-Time/assets/reviews/Liam-Anderson.png' className='w-12 h-12'/></div>
                                 <p className='text-sm'>Liam Anderson</p>
                             </div>
-                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/assets/svgs/google.svg'/></div>
+                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/Arcade-Time/assets/svgs/google.svg'/></div>
                         </div>
                         <div className='w-full h-[15%]'>
-                            <img className="w-20" src='/assets/reviews/stars.png'/>
+                            <img className="w-20" src='/Arcade-Time/assets/reviews/stars.png'/>
                         </div>
                         <p className='w-full h-[60%] text-xs'>
                         “If you’re looking for a fun and affordable place to spend a few hours, 
@@ -37,13 +37,13 @@ class CoverflowCarousel extends Component<{}, { active: number }> {
                     <div className='w-[244px] h-[244px] p-4 border-2 border-black rounded-lg bg-cover bg-no-repeat flex flex-col bg-white'>
                         <div className='w-full flex h-[25%]'>
                             <div className='w-4/5 flex justify-left items-center'>
-                                <div className='flex justify-center items-center'><img alt="" src='/assets/reviews/David-Lee.png' className='w-12 h-12'/></div>
+                                <div className='flex justify-center items-center'><img alt="" src='/Arcade-Time/assets/reviews/David-Lee.png' className='w-12 h-12'/></div>
                                 <p className='text-sm'>Richard Myers</p>
                             </div>
-                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/assets/svgs/google.svg'/></div>
+                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/Arcade-Time/assets/svgs/google.svg'/></div>
                         </div>
                         <div className='w-full h-[15%]'>
-                            <img className="w-24" src='/assets/reviews/stars.png'/>
+                            <img className="w-24" src='/Arcade-Time/assets/reviews/stars.png'/>
                         </div>
                         <p className='w-full h-[60%] text-xs'>
                         “This is the best arcade I’ve been to in a long time. 
@@ -58,13 +58,13 @@ class CoverflowCarousel extends Component<{}, { active: number }> {
                     <div className='w-[244px] h-[244px] p-4 border-2 border-black rounded-lg bg-cover bg-no-repeat flex flex-col bg-white'>
                         <div className='w-full flex h-[25%]'>
                             <div className='w-4/5 flex justify-left items-center'>
-                                <div className='flex justify-center items-center'><img alt="" src='/assets/reviews/Olivia-White.png' className='w-12 h-12'/></div>
+                                <div className='flex justify-center items-center'><img alt="" src='/Arcade-Time/assets/reviews/Olivia-White.png' className='w-12 h-12'/></div>
                                 <p className='text-sm'>Olivia White</p>
                             </div>
-                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/assets/svgs/google.svg'/></div>
+                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/Arcade-Time/assets/svgs/google.svg'/></div>
                         </div>
                         <div className='w-full h-[15%]'>
-                            <img alt=""  className="w-24" src='/assets/reviews/stars.png'/>
+                            <img alt=""  className="w-24" src='/Arcade-Time/assets/reviews/stars.png'/>
                         </div>
                         <p className='w-full h-[60%] text-xs'>
                         “Had an amazing time at this arcade. The atmosphere is electric, 
@@ -78,13 +78,13 @@ class CoverflowCarousel extends Component<{}, { active: number }> {
                     <div className='w-[244px] h-[244px] p-4 border-2 border-black rounded-lg bg-cover bg-no-repeat flex flex-col bg-white'>
                         <div className='w-full flex h-[25%]'>
                             <div className='w-4/5 flex justify-left items-center'>
-                                <div className='flex justify-center items-center'><img alt="" src='/assets/reviews/John-Parker.png' className='w-12 h-12'/></div>
+                                <div className='flex justify-center items-center'><img alt="" src='/Arcade-Time/assets/reviews/John-Parker.png' className='w-12 h-12'/></div>
                                 <p className='text-sm'>John Parker</p>
                             </div>
-                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/assets/svgs/google.svg'/></div>
+                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/Arcade-Time/assets/svgs/google.svg'/></div>
                         </div>
                         <div className='w-full h-[15%]'>
-                            <img alt=""  className="w-24" src='/assets/reviews/stars.png'/>
+                            <img alt=""  className="w-24" src='/Arcade-Time/assets/reviews/stars.png'/>
                         </div>
                         <p className='w-full h-[60%] text-xs'>
                             “Absolutely loved this arcade! The variety of games is incredible,
@@ -98,13 +98,13 @@ class CoverflowCarousel extends Component<{}, { active: number }> {
                     <div className='w-[244px] h-[244px] p-4 border-2 border-black rounded-lg bg-cover bg-no-repeat flex flex-col bg-white'>
                         <div className='w-full flex h-[25%]'>
                             <div className='w-4/5 flex justify-left items-center'>
-                                <div className='flex justify-center items-center'><img alt="" src='/assets/reviews/Sarah-Mitchell.png' className='w-12 h-12'/></div>
+                                <div className='flex justify-center items-center'><img alt="" src='/Arcade-Time/assets/reviews/Sarah-Mitchell.png' className='w-12 h-12'/></div>
                                 <p className='text-sm'>Sarah Mitchell</p>
                             </div>
-                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/assets/svgs/google.svg'/></div>
+                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/Arcade-Time/assets/svgs/google.svg'/></div>
                         </div>
                         <div className='w-full h-[15%]'>
-                            <img alt=""  className="w-24" src='/assets/reviews/stars.png'/>
+                            <img alt=""  className="w-24" src='/Arcade-Time/assets/reviews/stars.png'/>
                         </div>
                         <p className='w-full h-[60%] text-xs'>
                             “This arcade is a hidden gem! I spent hours here and still didn't get to 
@@ -117,13 +117,13 @@ class CoverflowCarousel extends Component<{}, { active: number }> {
                     <div className='w-[244px] h-[244px] p-4 border-2 border-black rounded-lg bg-cover bg-no-repeat flex flex-col bg-white'>
                         <div className='w-full flex h-[25%]'>
                             <div className='w-4/5 flex justify-left items-center'>
-                                <div className='flex justify-center items-center'><img alt="" src='/assets/reviews/Mike-Johnson.png' className='w-12 h-12'/></div>
+                                <div className='flex justify-center items-center'><img alt="" src='/Arcade-Time/assets/reviews/Mike-Johnson.png' className='w-12 h-12'/></div>
                                 <p className='text-sm'>Mike Johnson</p>
                             </div>
-                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/assets/svgs/google.svg'/></div>
+                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/Arcade-Time/assets/svgs/google.svg'/></div>
                         </div>
                         <div className='w-full h-[15%]'>
-                            <img alt=""  className="w-24" src='/assets/reviews/stars.png'/>
+                            <img alt=""  className="w-24" src='/Arcade-Time/assets/reviews/stars.png'/>
                         </div>
                         <p className='w-full h-[60%] text-xs'>
                             “My kids and I had a blast at this arcade. There are games for 
@@ -137,13 +137,13 @@ class CoverflowCarousel extends Component<{}, { active: number }> {
                     <div className='w-[244px] h-[244px] p-4 border-2 border-black rounded-lg bg-cover bg-no-repeat flex flex-col bg-white'>
                         <div className='w-full flex h-[25%]'>
                             <div className='w-4/5 flex justify-left items-center'>
-                                <div className='flex justify-center items-center'><img alt="" src='/assets/reviews/Jonathan-Demare.png' className='w-12 h-12'/></div>
+                                <div className='flex justify-center items-center'><img alt="" src='/Arcade-Time/assets/reviews/Jonathan-Demare.png' className='w-12 h-12'/></div>
                                 <p className='text-sm'>David Lee</p>
                             </div>
-                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/assets/svgs/google.svg'/></div>
+                            <div className='w-1/5 flex items-center justify-end m-2'><img alt="" className="w-6"src='/Arcade-Time/assets/svgs/google.svg'/></div>
                         </div>
                         <div className='w-full h-[15%]'>
-                            <img alt=""  className="w-24" src='/assets/reviews/stars.png'/>
+                            <img alt=""  className="w-24" src='/Arcade-Time/assets/reviews/stars.png'/>
                         </div>
                         <p className='w-full h-[60%] text-xs'>
                         “As a fan of retro games, this arcade was a dream come true. 
