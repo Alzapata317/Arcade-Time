@@ -5,13 +5,13 @@
 @layer base {
   @font-face {
     font-family: 'NeonRetroDemoVersionRegular';
-    src: url('/assets/fonts/NeonRetro-DemoVersion-Regular.woff2') format('woff2');
+    src: url('/Arcade-Time/assets/fonts/NeonRetro-DemoVersion-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'NeonSans';
-    src: url('/assets/fonts/NeonSans.otf') format('opentype');
+    src: url('/Arcade-Time/assets/fonts/NeonSans.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
