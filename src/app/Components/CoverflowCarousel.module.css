@@ -1,0 +1,25 @@
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Match the image width */
+    height: 300px; /* Match the image height */
+  }
+  
+  .innerSlide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    background: #fff;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }

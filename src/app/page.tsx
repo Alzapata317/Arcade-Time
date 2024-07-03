@@ -1,113 +1,244 @@
-import Image from "next/image";
+'use client'
+import CoverflowCarousel from "./Components/CoverflowCarousel";
+import EmblaCarousel from "./Components/EmblaCarousel";
+import CustomRadioButton from './Components/CustomRadioButton';
+import ScrollBarInput from './Components/ScrollBarInput';
+import TimeButton from './Components/TimeButton';
+import PackageButton from './Components/PackageButton';
+import FadeCarousel from "./Components/FadeCarousel";
+
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [showButton, setShowButton] = useState(false);
+  const [showEventPlanner, setShowEventPlanner] = useState(false);
+  const [formData, setFormData] = useState({ customOption: '', number: 1, timeOption: '', packageOption: ''});
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  const options = [
+    { value: 'JacksonVille', label: 'Option 1' },
+    { value: 'Wellington', label: 'Option 2' },
+    { value: 'The Falls Mall Miami', label: 'Option 3' },
+    { value: 'Coral Square Mall', label: 'Option 2' },
+  ];
+
+  const times = [
+    { value: '1', label: 'Option 1' },
+    { value: '2', label: 'Option 2' },
+  ];
+  const packages = [
+    { value: '40', label: 'Option 1' },
+    { value: '60', infinite: 'Unlimited Playtime', label: 'Option 2' },
+  ];
+  const handleRadioChange = (value: any) => {
+    setFormData({ ...formData, customOption: value });
+  };
+
+  const handleTimeChange = (value: any) => {
+    setFormData({ ...formData, timeOption: value });
+  };
+
+  const handlePackageChange = (value: any) => {
+    setFormData({ ...formData, timeOption: value });
+  };
+
+  const handleNumberChange = (value: any) => {
+    setFormData({ ...formData, number: value });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log('Form Data:', formData);
+  };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="bg-black">
+
+      <nav className="shadow-neonPink h-48 flex fixed w-screen top-0 bg-black z-20">
+        {showEventPlanner && (
+          <div className="w-[450px] h-screen rounded-r-lg rounded-b-lg bg-slate-950 absolute top-0 right-0 z-30 p-8 pt-3">
+            <form className="pt-8 pl-2" onSubmit={handleSubmit}>
+              <div className="w-full flex justify-between">
+                <h1 className="w-4/5 font-neon text-neonBlue text-4xl">Pick Location</h1>
+                <button className="w-8 h-8 font-neon text-neonBlue text-3xl border-neonBlue border-2 rounded-md text-center" onClick={() => setShowEventPlanner((prev) => !prev)}>X</button>
+              </div>
+              <CustomRadioButton options={options} name="customOption" onChange={handleRadioChange} />
+              
+              <h1 className="w-full font-neon text-neonBlue text-4xl">Party Size</h1>
+              <div className="w-full h-24 flex flex-col m-4">
+                <ScrollBarInput name="number" min={1} max={10} onChange={handleNumberChange} />
+              </div>
+
+              <h1 className="w-full font-neon text-neonBlue text-4xl">Length of Time</h1>
+              <TimeButton options={times} name="timeOption" onChange={handleTimeChange} />
+              
+              <h1 className="w-full font-neon text-neonBlue text-4xl">Party Package</h1>
+              <PackageButton options={packages} name="packageOption" onChange={handlePackageChange} />
+              <div className="w-full h-24 flex flex-col justify-center items-center mt-6">
+                <button className="font-neon text-neonPurple hover:text-neonYellow hover:border-neonYellow text-3xl border-2 border-neonPurple p-2 pt-3 rounded-xl" type="submit">Check Availability</button>
+              </div>
+            </form>
+          </div>
+        )}
+        <div className="w-1/2 relative flex justify-end items-center bg-black">
+          <img className="w-[448px] h-[80px] absolute top-0 left-0" src="/assets/images/Left-Nav.png"/>
+          <img className="w-[600px] h-[160px] z-10" src="/assets/images/Arcade-Time-Logo3.webp"/>
         </div>
-      </div>
+        <div className="w-1/2 px-12 flex flex-col justify-evenly items-center">
+          <div className="w-full flex justify-center items-center relative">
+            <button className="flex justify-evenly w-48 h-12 text-2xl text-center items-center p-1 text-neonBlue border-2 border-neonBlue rounded-lg mx-10 hover:shadow-neonBlue">
+              <img className="h-8" src="/assets/images/Reservation.png"/>
+              <h1 className="font-neon text-center self-end">Reserve</h1>
+            </button>
+            <button className="w-40 h-12 mx-10 text-3xl pt-[7px] text-black font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" onClick={() => setShowEventPlanner((prev) => !prev)}>Book Event</button>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          </div>
+          <section className="text-xl w-full flex justify-evenly z-10">
+            <h1 className="text-3xl font-neon text-neonBlue hover:underline underline-offset-8">Eat & Drink</h1>
+            <h1 className="text-3xl font-neon text-neonBlue hover:underline underline-offset-8">Play</h1>
+            <h1 className="text-3xl font-neon text-neonBlue hover:underline underline-offset-8">Gallery</h1>
+            <h1 className="text-3xl font-neon text-neonBlue hover:underline underline-offset-8">Locations</h1>
+          </section>
+          <img className="w-[448px] h-[80px] absolute bottom-0 -right-2" src="/assets/images/Right-Nav.png"/>
+        </div>
+      </nav>
+      <section id="intro" className="h-[760px] w-full relative mt-[193px]">
+        <div className="h-[760px] w-full bg-no-repeat bg-cover items-center flex justify-center" style={{ backgroundImage: 'url(/assets/images/Banner1.jpg)' }}>
+        <div className="bg-[#00000080] pl-24 flex flex-col items-start justify-center  w-[100%] h-[760px]">
+            <img className="w-[650px]" src="/assets/images/LogoTransparent.webp"/>
+            <h1 className="text-white text-3xl text-center w-[700px]">Grab your blaster and defend the universe against waves of approaching aliens. Show off your skills on a massive display for everyone to see. Sit back and enjoy the ride. Arcade Time Entertainment has something for everyone!</h1>
+          </div>
+        </div>
+      </section>
+      <section id="resturant" className="h-[900px] w-full flex justify-center items-center bg-black relative">
+          <FadeCarousel/>
+          <div className="absolute top-32 left-32 bg-opacity-40 bg-black w-[600px] h-[470px] gap-9 rounded-3xl flex flex-col items-center p-10">
+            <h1 className="text-white font-bold text-5xl">“Indulge Your Senses, Every Meal, Every Time!”</h1>
+            <p className="text-gray-300 text-xl">Limited Time Offer: Buy One Get One Free on All Wing Orders! Come for the wings, stay for the taste. Dive into deliciousness today and double your delight!</p>
+            <button className=" bg-gradient-to-b from-neonPurple to-indigo-700 w-72 h-16 rounded-3xl text-2xl font-bold">Make a Reservation!</button>
+          </div>
+      </section>
+      <section id="retro-games" className="h-[400px] md:h-[800px] bg-cover relative" style={{ backgroundImage: 'url(/assets/images/neon-background.jpg)' }}>
+        <div className="z-0 grid grid-cols-12 gap-4 absolute w-[100%] top-0">
+          <div className="h-[230px]"></div>
+          <div className="col-span-5 "></div>
+          <div className=""></div>
+          <h1 className="col-span-5 font-neon text-neonYellow text-8xl text-shadow-neonYellow text-center self-end ">Retro Games</h1>
+          <div className=""></div>
+          <EmblaCarousel />
+          <div className=""></div>
+          <div className="text-white text-4xl text-center flex items-center col-span-5 p-10 font-serif">Looking for some retro gaming excitement ? Check out our massive Retro arcade games and equipment. Pac-Man, Galaga, Street Fighter to name a few.</div>
+        </div>
+        <img className="absolute w-screen h-full z-10" src="/assets/images/arcade-machine2.png"/>
+      </section>
+      <section id="other-games" className="h-[1500px] flex flex-col">
+        <div className="h-1/3 w-full flex">
+          <div className="w-2/5 h-full bg-cover flex flex-col justify-center items-center" style={{ backgroundImage: 'url(/assets/images/neon-carpet1.png)' }}>
+            <h1 className="bg-[#00000099] font-neon text-neonGreen text-shadow-neonGreen text-6xl  h-2/5 w-full flex flex-col items-center justify-center">Axe Throwing</h1>
+            <p className="bg-[#00000099] text-neonBlue h-3/5 w-full flex flex-col items-center text-justify px-20 text-xl font-bold">
+              Unleash your inner warrior and experience the thrill of axe throwing at our state-of-the-art facility. 
+              Perfect for beginners and seasoned throwers alike!
+              Gather your friends and challenge them to the ultimate test of skill and precision with our exciting axe throwing adventures 
+              - book your session today!
+            </p>
+          </div>
+          <img src="/assets/images/axe-throwing.jpg" className="w-3/5 h-full"></img>
+        </div>
+        <div className="bg-white h-1/3 w-full flex">
+          <img src="/assets/images/darts.jpg" className="w-3/5 h-full"></img>
+          <div className="w-2/5 h-full bg-cover flex flex-col justify-center items-center" style={{ backgroundImage: 'url(/assets/images/neon-carpet1.png)' }}>
+            <h1 className="bg-[#00000099] font-neon text-neonGreen text-shadow-neonGreen text-6xl  h-2/5 w-full flex flex-col items-center justify-center">AR Darts</h1>
+            <p className="bg-[#00000099] text-neonBlue h-3/5 w-full flex flex-col items-center text-center px-20 text-xl font-bold">
+              Step into the future of gaming with our augmented reality darts, where traditional gameplay meets 
+              cutting-edge technology for an immersive and interactive experience like no other. Challenge your 
+              friends to high-tech dart matches that bring dynamic visuals and real-time feedback to every throw, 
+              making each game more exciting and engaging.
+            </p>
+          </div>
+        </div>
+        <div className="h-1/3 w-full flex">
+          <div className="w-2/5 h-full bg-cover flex flex-col justify-center items-center" style={{ backgroundImage: 'url(/assets/images/neon-carpet1.png)' }}>
+            <h1 className="bg-[#00000099] font-neon text-neonGreen text-shadow-neonGreen text-6xl  h-2/5 w-full flex flex-col items-center justify-center">Bowling</h1>
+            <p className="bg-[#00000099] text-neonBlue h-3/5 w-full flex flex-col items-center text-center px-20 text-xl font-bold">
+              Here at Arcade Time Entertainment Bowling has been revitalized. Come in and test your skills on our state of 
+              the art regulation size bowling lanes. Challenge your family & friends. See if you have what it takes
+              to come out on top!
+            </p>
+          </div>
+          <img src="/assets/images/bowling.png" className="w-3/5 h-full"></img>
+        </div>
+      </section>
+      <section className="bg-black h-[780px] flex flex-col">
+        <div className="w-full h-[100px] flex justify-center  relative">
+          <a href="https://www.google.com/search?q=arcade+time+entertainment&client=safari&sca_esv=063c593922e84ff5&rls=en&ei=gS-CZuDLLb2WwbkP_rOw-AM&ved=0ahUKEwigkJbL_4SHAxU9SzABHf4ZDD8Q4dUDCBA&uact=5&oq=arcade+time+entertainment&gs_lp=Egxnd3Mtd2l6LXNlcnAiGWFyY2FkZSB0aW1lIGVudGVydGFpbm1lbnQyERAuGIAEGJECGMcBGIoFGK8BMgUQABiABDIFEAAYgAQyBRAAGIAEMgsQLhiABBjHARivATIFEAAYgAQyBRAAGIAEMiAQLhiABBiRAhjHARiKBRivARiXBRjcBBjeBBjgBNgBAUjXH1DvAlinHnACeAGQAQCYAYIBoAHDCqoBBDEzLjK4AQPIAQD4AQGYAhGgAusLwgIKEAAYsAMY1gQYR8ICCBAuGIAEGOUEwgIKEAAYgAQYQxiKBcICGhAuGIAEGMcBGK8BGJcFGNwEGN4EGOAE2AEBwgIQEC4YgAQYQxjHARiKBRivAZgDAIgGAZAGB7oGBggBEAEYFJIHBDE0LjOgB76uAQ&sclient=gws-wiz-serp#" className="w-[355px] h-[65px] font-neon text-5xl text-neonYellow pt-2 absolute top-20 justify-center items-center flex hover:shadow-neonYellow rounded-lg z-10 border-neonYellow border-2">Give us a Review!</a>
+        </div>
+        <CoverflowCarousel/>
+      </section>
+      {showButton && (
+        <img
+          src="/assets/images/ship.png"
+          alt="Back to Top"
+          className="fixed bottom-10 right-10 p-3 w-16 z-40"
+          onClick={scrollToTop}
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      )}
+      <footer className="h-[225px] flex flex-col bg-gradient-to-t from-slate-800 to-black">
+        <div className="w-full h-[80%] flex">
+          <div className="w-2/5 justify-center items-center flex">
+            <img className="w-48" src="/assets/images/Arcade-Time-Logo.png"/>
+          </div>
+          <div className="w-3/5 flex text-white">
+            <div className="flex flex-col w-1/2 h-full justify-center">
+              <p className="w-full text-center text-neonBlue font-neon text-3xl m-4">Follow Us!</p>
+              <div className="w-full flex justify-around">
+                <a href="https://www.instagram.com/arcadetimeusa/"><img src="/assets/svgs/instagram.svg"/></a>
+                <a href="https://www.facebook.com/arcadetimeusa"><img src="/assets/svgs/facebook.svg" alt="FaceBook Logo" /></a>
+                <a href="https://www.x.com/arcadetimeusa"><img src="/assets/svgs/x.svg"/></a>
+                <a href="https://www.youtube.com//channel/UCJs4X_bUgUE5iNtH-GvLKNg"><img src="/assets/svgs/youtube.svg"/></a>
+              </div>
+            </div>
+            <div className="w-1/2 flex justify-center">
+              <div className="w-[33%] h-full flex flex-col pt-10">
+                <p className="my-1">Jacksonville</p>
+                <p className="my-1">Wellington</p>
+                <p className="my-1">The Falls Mall Miami</p>
+                <p className="my-1">Coral Square Mall</p>
+              </div>
+              <div className="w-[20%] flex flex-col pt-10">
+                <p className="my-1">Contact Us</p>
+                <p className="my-1">Careers</p>
+              </div>
+              <div className="w-[46%] flex flex-col items-center pt-11">
+                <button className="bg-gradient-to-t from-purple-950 to-indigo-950 text-center w-48 h-14 rounded-full">Join our Newsletter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-full h-[20%] pl-24 text-white  ">
+          Copyright © 2024 Arcade Time USA LLC - All Rights Reserved
+        </div>
+      </footer>
+      
     </main>
   );
 }
