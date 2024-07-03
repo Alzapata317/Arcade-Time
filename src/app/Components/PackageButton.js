@@ -48,8 +48,8 @@ PackageButton.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
+      infinite: PropTypes.string,
     })
   ).isRequired,
   name: PropTypes.string.isRequired,

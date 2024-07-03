@@ -39,7 +39,6 @@ CustomRadioButton.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
     })
   ).isRequired,
