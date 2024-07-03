@@ -6,6 +6,7 @@ import ScrollBarInput from './Components/ScrollBarInput';
 import TimeButton from './Components/TimeButton';
 import PackageButton from './Components/PackageButton';
 import FadeCarousel from "./Components/FadeCarousel";
+import Image from "next/image";
 
 import { useState, useEffect } from "react";
 
@@ -101,13 +102,13 @@ export default function Home() {
           </div>
         )}
         <div className="w-1/2 relative flex justify-end items-center bg-black">
-          <img className="w-[448px] h-[80px] absolute top-0 left-0" src="/assets/images/Left-Nav.png"/>
-          <img className="w-[600px] h-[160px] z-10" src="/assets/images/Arcade-Time-Logo3.webp"/>
+          <Image alt="" className="w-[448px] h-[80px] absolute top-0 left-0" src="/assets/images/Left-Nav.png"/>
+          <Image alt="" className="w-[600px] h-[160px] z-10" src="/assets/images/Arcade-Time-Logo3.webp"/>
         </div>
         <div className="w-1/2 px-12 flex flex-col justify-evenly items-center">
           <div className="w-full flex justify-center items-center relative">
             <button className="flex justify-evenly w-48 h-12 text-2xl text-center items-center p-1 text-neonBlue border-2 border-neonBlue rounded-lg mx-10 hover:shadow-neonBlue">
-              <img className="h-8" src="/assets/images/Reservation.png"/>
+              <Image alt="" className="h-8" src="/assets/images/Reservation.png"/>
               <h1 className="font-neon text-center self-end">Reserve</h1>
             </button>
             <button className="w-40 h-12 mx-10 text-3xl pt-[7px] text-black font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" onClick={() => setShowEventPlanner((prev) => !prev)}>Book Event</button>
@@ -119,13 +120,13 @@ export default function Home() {
             <h1 className="text-3xl font-neon text-neonBlue hover:underline underline-offset-8">Gallery</h1>
             <h1 className="text-3xl font-neon text-neonBlue hover:underline underline-offset-8">Locations</h1>
           </section>
-          <img className="w-[448px] h-[80px] absolute bottom-0 -right-2" src="/assets/images/Right-Nav.png"/>
+          <Image alt="" className="w-[448px] h-[80px] absolute bottom-0 -right-2" src="/assets/images/Right-Nav.png"/>
         </div>
       </nav>
       <section id="intro" className="h-[760px] w-full relative mt-[193px]">
         <div className="h-[760px] w-full bg-no-repeat bg-cover items-center flex justify-center" style={{ backgroundImage: 'url(/assets/images/Banner1.jpg)' }}>
         <div className="bg-[#00000080] pl-24 flex flex-col items-start justify-center  w-[100%] h-[760px]">
-            <img className="w-[650px]" src="/assets/images/LogoTransparent.webp"/>
+            <Image alt="" className="w-[650px]" src="/assets/images/LogoTransparent.webp"/>
             <h1 className="text-white text-3xl text-center w-[700px]">Grab your blaster and defend the universe against waves of approaching aliens. Show off your skills on a massive display for everyone to see. Sit back and enjoy the ride. Arcade Time Entertainment has something for everyone!</h1>
           </div>
         </div>
@@ -149,7 +150,7 @@ export default function Home() {
           <div className=""></div>
           <div className="text-white text-4xl text-center flex items-center col-span-5 p-10 font-serif">Looking for some retro gaming excitement ? Check out our massive Retro arcade games and equipment. Pac-Man, Galaga, Street Fighter to name a few.</div>
         </div>
-        <img className="absolute w-screen h-full z-10" src="/assets/images/arcade-machine2.png"/>
+        <Image alt="" className="absolute w-screen h-full z-10" src="/assets/images/arcade-machine2.png"/>
       </section>
       <section id="other-games" className="h-[1500px] flex flex-col">
         <div className="h-1/3 w-full flex">
@@ -162,10 +163,10 @@ export default function Home() {
               - book your session today!
             </p>
           </div>
-          <img src="/assets/images/axe-throwing.jpg" className="w-3/5 h-full"></img>
+          <Image alt="" src="/assets/images/axe-throwing.jpg" className="w-3/5 h-full"/>
         </div>
         <div className="bg-white h-1/3 w-full flex">
-          <img src="/assets/images/darts.jpg" className="w-3/5 h-full"></img>
+          <Image alt="" src="/assets/images/darts.jpg" className="w-3/5 h-full"/>
           <div className="w-2/5 h-full bg-cover flex flex-col justify-center items-center" style={{ backgroundImage: 'url(/assets/images/neon-carpet1.png)' }}>
             <h1 className="bg-[#00000099] font-neon text-neonGreen text-shadow-neonGreen text-6xl  h-2/5 w-full flex flex-col items-center justify-center">AR Darts</h1>
             <p className="bg-[#00000099] text-neonBlue h-3/5 w-full flex flex-col items-center text-center px-20 text-xl font-bold">
@@ -185,7 +186,7 @@ export default function Home() {
               to come out on top!
             </p>
           </div>
-          <img src="/assets/images/bowling.png" className="w-3/5 h-full"></img>
+          <Image alt="" src="/assets/images/bowling.png" className="w-3/5 h-full"/>
         </div>
       </section>
       <section className="bg-black h-[780px] flex flex-col">
@@ -195,7 +196,7 @@ export default function Home() {
         <CoverflowCarousel/>
       </section>
       {showButton && (
-        <img
+        <Image
           src="/assets/images/ship.png"
           alt="Back to Top"
           className="fixed bottom-10 right-10 p-3 w-16 z-40"
@@ -205,16 +206,16 @@ export default function Home() {
       <footer className="h-[225px] flex flex-col bg-gradient-to-t from-slate-800 to-black">
         <div className="w-full h-[80%] flex">
           <div className="w-2/5 justify-center items-center flex">
-            <img className="w-48" src="/assets/images/Arcade-Time-Logo.png"/>
+            <Image alt="" className="w-48" src="/assets/images/Arcade-Time-Logo.png"/>
           </div>
           <div className="w-3/5 flex text-white">
             <div className="flex flex-col w-1/2 h-full justify-center">
               <p className="w-full text-center text-neonBlue font-neon text-3xl m-4">Follow Us!</p>
               <div className="w-full flex justify-around">
-                <a href="https://www.instagram.com/arcadetimeusa/"><img src="/assets/svgs/instagram.svg"/></a>
-                <a href="https://www.facebook.com/arcadetimeusa"><img src="/assets/svgs/facebook.svg" alt="FaceBook Logo" /></a>
-                <a href="https://www.x.com/arcadetimeusa"><img src="/assets/svgs/x.svg"/></a>
-                <a href="https://www.youtube.com//channel/UCJs4X_bUgUE5iNtH-GvLKNg"><img src="/assets/svgs/youtube.svg"/></a>
+                <a href="https://www.instagram.com/arcadetimeusa/"><Image alt="" src="/assets/svgs/instagram.svg"/></a>
+                <a href="https://www.facebook.com/arcadetimeusa"><Image src="/assets/svgs/facebook.svg" alt="FaceBook Logo" /></a>
+                <a href="https://www.x.com/arcadetimeusa"><Image alt="" src="/assets/svgs/x.svg"/></a>
+                <a href="https://www.youtube.com//channel/UCJs4X_bUgUE5iNtH-GvLKNg"><Image alt="" src="/assets/svgs/youtube.svg"/></a>
               </div>
             </div>
             <div className="w-1/2 flex justify-center">
