@@ -27,7 +27,6 @@ const TimeButton = ({ options, name, onChange }) => {
             onChange={() => handleClick(option.value)}
             style={{ display: 'none' }}
           />
-          {/* <img src={option.image} alt={option.label} /> */}
           <div className={`w-[115px] h-28 flex border-2 p-2 rounded-md ${selected === option.value ? 'selected text-neonYellow border-neonYellow' : 'text-neonPurple border-neonPurple'}`}>
             <h1 className='font-neonSans text-8xl'>{option.value}</h1>
             <h1 className='font-neon text-3xl pt-1'>HR</h1>

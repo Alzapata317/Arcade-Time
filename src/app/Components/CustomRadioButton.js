@@ -27,7 +27,6 @@ const CustomRadioButton = ({ options, name, onChange }) => {
             onChange={() => handleClick(option.value)}
             style={{ display: 'none' }}
           />
-          {/* <img src={option.image} alt={option.label} /> */}
           <h1 className={`font-neon text-3xl ${selected === option.value ? 'selected text-neonYellow' : 'text-neonPurple'}`}>{option.value}</h1>
         </label>
       ))}

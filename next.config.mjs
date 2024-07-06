@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: '/Arcade-Time',
-    assetPrefix: '/Arcade-Time/',
+    basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+    assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
     images: {
       loader: 'imgix',
       path: '',
     },
-    trailingSlash: true, // Ensures trailing slashes are added to all routes
+    trailingSlash: true,
   };
-
-export default nextConfig;
+  
+  export default nextConfig;

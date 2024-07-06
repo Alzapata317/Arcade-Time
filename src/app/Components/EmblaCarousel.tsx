@@ -2,7 +2,8 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import styles from './EmblaCarousel.module.css';
+import styles from '../styles/EmblaCarousel.module.css';
+import { getImageUrl } from '../utils/getImageUrl';
 
 const EmblaCarousel = () => {
   const autoplay = Autoplay({ delay: 5000 }); // Adjust the delay as needed
@@ -13,25 +14,25 @@ const EmblaCarousel = () => {
       <div className={styles.embla__viewport + " w-[100%] h-[100%] "} ref={emblaRef}>
         <div className={styles.embla__container }>
           <div className={styles.embla__slide + " relative"}>
-            <img src="/Arcade-Time/assets/images/Pacman.webp" alt="First slide" />
+            <img src={getImageUrl("/assets/images/Pacman.webp")} alt="First slide" />
           </div>
           <div className={styles.embla__slide}>
-            <img src="/Arcade-Time/assets/images/Galaga.jpg" alt="Second slide" />
+            <img src={getImageUrl("/assets/images/Galaga.jpg")}alt="Second slide" />
           </div>
           <div className={styles.embla__slide}>
-            <img src="/Arcade-Time/assets/images/Sf.avif" alt="Third slide" />
+            <img src={getImageUrl("/assets/images/Sf.avif")} alt="Third slide" />
           </div>
           <div className={styles.embla__slide}>
-            <img src="/Arcade-Time/assets/images/DonkeyKong.jpg" alt="Fourth slide" />
+            <img src={getImageUrl("/assets/images/DonkeyKong.jpg")} alt="Fourth slide" />
           </div>
           <div className={styles.embla__slide}>
-            <img src="/Arcade-Time/assets/images/marvel.jpg" alt="Five slide" />
+            <img src={getImageUrl("/assets/images/marvel.jpg")} alt="Five slide" />
           </div>
           <div className={styles.embla__slide}>
-            <img src="/Arcade-Time/assets/images/tapper.jpg" alt="Sixth slide" />
+            <img src={getImageUrl("/assets/images/tapper.jpg")} alt="Sixth slide" />
           </div>
           <div className={styles.embla__slide}>
-            <img src="/Arcade-Time/assets/images/tmnt.png" alt="Seventh slide" />
+            <img src={getImageUrl("/assets/images/tmnt.png")} alt="Seventh slide" />
           </div>
         </div>
       </div>

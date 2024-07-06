@@ -27,7 +27,6 @@ const PackageButton = ({ options, name, onChange }) => {
             onChange={() => handleClick(option.value)}
             style={{ display: 'none' }}
           />
-          {/* <img src={option.image} alt={option.label} /> */}
           <div className={`w-[175px] h-36 text-center flex flex-col border-2 p-2 rounded-md ${selected === option.value ? 'selected text-neonYellow border-neonYellow' : 'text-neonPurple border-neonPurple'}`}>
             <div className='flex w-full justify-center'>
                 <h1 className='font-neonSans text-5xl'>{option.value}</h1>
