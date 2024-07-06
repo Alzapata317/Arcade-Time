@@ -106,7 +106,7 @@ export default function Nav() {
             <button onClick={() => handleToggleDropdown('dropdown4')} className="text-3xl font-neon text-neonBlue hover:underline underline-offset-8">Locations</button>
             {openDropdown === 'dropdown4' && (
                 <div className="absolute p-[1vh] top-[6vh] right-[7vh] w-[25vh] h-[17vh] bg-slate-900 text-neonBlue font-neon rounded-lg text-2xl flex flex-col justify-around">
-                <a href='/locations/JacksonVille'>Jacksonville</a>
+                <a href='/locations/Jacksonville'>Jacksonville</a>
                 <a href='/locations/Wellington'>Wellington</a>
                 <a href='/locations/The-Falls-Mall-Miami'>The Falls Mall Miami</a>
                 <a href='/locations/Coral-Square-Mall'>Coral Square Mall</a>

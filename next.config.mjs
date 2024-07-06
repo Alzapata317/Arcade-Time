@@ -7,6 +7,7 @@ const nextConfig = {
       path: '',
     },
     trailingSlash: true,
+    output: 'export',
   };
   
   export default nextConfig;
