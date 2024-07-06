@@ -68,6 +68,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
+        env:
+          NEXT_PUBLIC_BASE_PATH: /Arcade-Time
         run: npm install --legacy-peer-deps
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
