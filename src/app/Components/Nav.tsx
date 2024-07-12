@@ -1,9 +1,11 @@
-import CustomRadioButton from './CustomRadioButton';
-import ScrollBarInput from './ScrollBarInput';
-import TimeButton from './TimeButton';
-import PackageButton from './PackageButton';
-import { useState } from 'react';
-import { getImageUrl } from '../utils/getImageUrl';
+import CustomRadioButton from './inputs/CustomRadioButton';
+import ScrollBarInput from './inputs/ScrollBarInput';
+import TimeButton from './inputs/TimeButton';
+import PackageButton from './inputs/PackageButton';
+import { useContext, useState } from 'react';
+import { getBaseUrl } from '../utils/getBaseUrl';
+import { Divide } from 'hamburger-react';
+import { AppContext } from '../../../context/AppContext';
 
 interface PackageOption {
     value: string;
@@ -38,6 +40,8 @@ export default function Nav() {
     const [showEventPlanner, setShowEventPlanner] = useState(false);
     const [formData, setFormData] = useState({ customOption: '', number: 1, timeOption: '', packageOption: ''});
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const {showList,setShowList} = useContext(AppContext);
+    const [showLocations, setShowLocations] = useState(false);
 
     const handleToggleDropdown = (dropdown: string) => {
       setOpenDropdown(openDropdown === dropdown ? null : dropdown);
@@ -60,61 +64,105 @@ export default function Nav() {
         console.log('Form Data:', formData);
       };
   return (
-        <nav className="shadow-neonPink h-48 flex fixed w-screen top-0 bg-black z-20">
+        <nav className="shadow-neonPink lm-sm:h-[20vh] h-[12vh] flex fixed w-screen top-0 bg-black z-20">
         {showEventPlanner && (
-        <div className="w-[450px] h-screen rounded-r-lg rounded-b-lg bg-slate-950 absolute top-0 right-0 z-30 p-8 pt-3">
-            <form className="pt-8 pl-2" onSubmit={handleSubmit}>
+        <div className="pm-sm:w-full pm-md:w-[60vw] lm-sm:w-[30vw] lm-md:w-[45vw] lm-lg:w-[26vw] h-screen rounded-r-lg rounded-b-lg bg-slate-950 absolute top-0 right-0 z-30 p-8 pt-3 overflow-auto">
+            <form className="pt-[4vh] pl-[.5vw]" onSubmit={handleSubmit}>
             <div className="w-full flex justify-between">
-                <h1 className="w-4/5 font-neon text-neonBlue text-4xl">Pick Location</h1>
-                <button className="w-8 h-8 font-neon text-neonBlue text-3xl border-neonBlue border-2 rounded-md text-center" onClick={() => setShowEventPlanner((prev) => !prev)}>X</button>
+                <h1 className="w-4/5 font-neon text-neonBlue text-[4vh]">Pick Location</h1>
+                <button className="pm-sm:w-[6vw] pm-md:w-[4vw] lm-sm:w-[1.75vw] lm-lg:w-[1.75vw] h-[3.4vh] font-neon text-neonBlue text-[2.5vh] border-neonBlue pm-sm:border-[.4vw] pm-md:border-[.3vw] lm-sm:border-[.1vw] lm-md:border-[.2vw] lm-lg:border-[.13vw] rounded-md text-center mt-[1vh]" onClick={() => setShowEventPlanner((prev) => !prev)}>X</button>
             </div>
             <CustomRadioButton options={options} name="customOption" onChange={handleRadioChange} />
             
-            <h1 className="w-full font-neon text-neonBlue text-4xl">Party Size</h1>
-            <div className="w-full h-24 flex flex-col m-4">
+            <h1 className="w-full font-neon text-neonBlue text-[4vh]">Party Size</h1>
+            <div className="w-full pm-sm:h-[14vh] pm-md:h-24 lm-sm:h-[17vh] flex flex-col pm-md:m-4 items-center justify-center">
                 <ScrollBarInput name="number" min={1} max={10} onChange={handleNumberChange} />
             </div>
 
-            <h1 className="w-full font-neon text-neonBlue text-4xl">Length of Time</h1>
+            <h1 className="w-full font-neon text-neonBlue text-[4vh]">Length of Time</h1>
             <TimeButton options={times} name="timeOption" onChange={handleTimeChange} />
             
-            <h1 className="w-full font-neon text-neonBlue text-4xl">Party Package</h1>
+            <h1 className="w-full font-neon text-neonBlue text-[4vh]">Party Package</h1>
             <PackageButton options={packages} name="packageOption" onChange={handlePackageChange} />
-            <div className="w-full h-24 flex flex-col justify-center items-center mt-6">
-                <button className="font-neon text-neonPurple hover:text-neonYellow hover:border-neonYellow text-3xl border-2 border-neonPurple p-2 pt-3 rounded-xl" type="submit">Check Availability</button>
+            <div className="w-full  flex flex-col justify-center items-center mt-6">
+                <button className="font-neon text-neonPurple hover:text-neonYellow hover:border-neonYellow text-[4vh] border-2 border-neonPurple p-2 pt-3 rounded-xl" type="submit">Check Availability</button>
             </div>
             </form>
+            <div className='pm-sm:h-[10vh] pm-md:hidden lm-sm:h-[20vh] lm-md:hidden'></div>
         </div>
         )}
-        <div className="w-1/2 relative flex justify-end items-center bg-black">
-        <img alt="" className="w-[448px] h-[80px] absolute top-0 left-0" src={getImageUrl("/assets/images/Left-Nav.png")}/>
-        <img alt="" className="w-[600px] h-[160px] z-10" src={getImageUrl("/assets/images/Arcade-Time-Logo3.webp")}/>
+        <div className="w-1/2 pm-md:w-1/3 relative flex justify-center lm-sm:justify-end  items-center bg-black">
+          <img alt="" className="lm-sm:w-[40vw] lm-sm:h-[10vh] absolute top-0 left-0 hidden lm-sm:block" src={getBaseUrl("/assets/images/Left-Nav.png")}/>
+          <a className='z-10' href={getBaseUrl('/')}>
+            <img alt="" className="lm-sm:w-[40vw] lm-sm:h-[17vh] z-10 hidden lm-sm:block" src={getBaseUrl("/assets/images/Arcade-Time-Logo3.webp")}/>
+            <img alt="" className="h-[10vh] lm-sm:w-[40vw] lm-sm:h-[17vh] lm-sm:hidden z-10 " src={getBaseUrl("/assets/images/Arcade-Time-Logo.png")}/>
+          </a>
         </div>
-        <div className="w-1/2 px-12 flex flex-col justify-evenly items-center">
-        <div className="w-full flex justify-center items-center relative">
-            <button className="flex justify-evenly w-48 h-12 text-2xl text-center items-center p-1 text-neonBlue border-2 border-neonBlue rounded-lg mx-10 hover:shadow-neonBlue">
-            <img alt="" className="h-8" src={getImageUrl("/assets/images/Reservation.png")}/>
-            <h1 className="font-neon text-center self-end">Reserve</h1>
-            </button>
-            <button className="w-40 h-12 mx-10 text-3xl pt-[7px] text-black font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" onClick={() => setShowEventPlanner((prev) => !prev)}>Book Event</button>
-
-        </div>
-        <section className="text-xl w-full flex justify-evenly z-10 relative">
-            <h1 className="text-3xl font-neon text-neonBlue hover:underline underline-offset-8">Eat & Drink</h1>
-            <h1 className="text-3xl font-neon text-neonBlue hover:underline underline-offset-8">Play</h1>
-            <h1 className="text-3xl font-neon text-neonBlue hover:underline underline-offset-8">Gallery</h1>
-            <button onClick={() => handleToggleDropdown('dropdown4')} className="text-3xl font-neon text-neonBlue hover:underline underline-offset-8">Locations</button>
+        <div className="w-1/2 pm-md:w-2/3  lm-sm:px-12 flex flex-col justify-evenly items-center">
+          <div className="w-full flex justify-evenly items-center relative">
+              <button 
+                className="flex justify-evenly w-[32vw] h-[5.5vh] pm-md:w-[19vw] lm-sm:w-[10vw] lm-md:w-[12vw] lm-sm:h-[5.25vh] lm-xl:rounded-2xl text-center items-center text-neonBlue border-2 border-neonBlue rounded-lg lm-md:mx-10 hover:shadow-neonBlue">
+                <img 
+                  className="h-[3.25vh] lm-sm:h-[3.5vh]" 
+                  src={getBaseUrl("/assets/images/Reservation.png")}
+                />
+                <h1 
+                  className="font-neon text-center self-center text-[2.5vh] lm-sm:text-[2.5vh] pt-[.4vh] ">
+                    Reserve
+                </h1>
+              </button>
+              <button 
+                className=" w-[28vw] pm-md:w-[19vw] pm-md:h-[5.5vh] lm-sm:w-[10vw] lm-md:w-[14vw] lm-lg:w-[12vw] lm-sm:h-[5.25] lm-xl:rounded-2xl lm-md:mx-10 text-[2vh] pm-md:text-[2.5vh] lm-sm:text-[3.25vh] pt-[.5vh] hidden pm-md:block lm-sm:block text-black font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
+                onClick={() => setShowEventPlanner((prev) => !prev)}>
+                  Book Event
+              </button>
+              <button 
+              className='w-2vh lm-sm:hidden'
+              onClick={() => setShowList((prev: any) => !prev)}>
+                <Divide color='#45f3ff'/>
+              </button>
+          </div>
+          <section className="text-[3vh] w-full justify-evenly z-10 relative hidden lm-sm:flex">
+            <h1 className="font-neon text-neonBlue hover:underline underline-offset-8">Eat & Drink</h1>
+            <h1 className="font-neon text-neonBlue hover:underline underline-offset-8">Play</h1>
+            <h1 className="font-neon text-neonBlue hover:underline underline-offset-8">Gallery</h1>
+            <button onClick={() => handleToggleDropdown('dropdown4')} className="font-neon text-neonBlue hover:underline underline-offset-8">Locations</button>
             {openDropdown === 'dropdown4' && (
-                <div className="absolute p-[1vh] top-[6vh] right-[7vh] w-[25vh] h-[17vh] bg-slate-900 text-neonBlue font-neon rounded-lg text-2xl flex flex-col justify-around">
-                <a href={getImageUrl('/locations/Jacksonville')}>Jacksonville</a>
-                <a href={getImageUrl('/locations/Wellington')}>Wellington</a>
-                <a href={getImageUrl('/locations/The-Falls-Mall-Miami')}>The Falls Mall Miami</a>
-                <a href={getImageUrl('/locations/Coral-Square-Mall')}>Coral Square Mall</a>
+                <div className="absolute p-[1vh] top-[6vh] right-[7vh] lm-sm:w-[25vh] lm-sm:h-[17vh] bg-slate-900 text-neonBlue font-neon rounded-lg text-[2vh] flex flex-col justify-around">
+                <a href={getBaseUrl('/locations/Jacksonville')}>Jacksonville</a>
+                <a href={getBaseUrl('/locations/Wellington')}>Wellington</a>
+                <a href={getBaseUrl('/locations/The-Falls-Mall-Miami')}>The Falls Mall Miami</a>
+                <a href={getBaseUrl('/locations/Coral-Square-Mall')}>Coral Square Mall</a>
                 </div>
             )}
-        </section>
-        <img alt="" className="w-[448px] h-[80px] absolute bottom-0 -right-2" src={getImageUrl("/assets/images/Right-Nav.png")}/>
+          </section>
+          <img alt="" className="lm-sm:w-[30vw] lm-sm:h-[8vh] absolute bottom-0 -right-2 hidden lm-sm:block" src={getBaseUrl("/assets/images/Right-Nav.png")}/>
         </div>
+        {showList && (
+          <div className='h-[100vh] w-full top-[12vh] left-0 absolute  text-neonBlue flex flex-col text-[4vh] gap-[2vh] px-[8vw] pt-[4vh] bg-slate-900'>
+            <button className='text-left flex' onClick={() => setShowLocations((prev) => !prev)}>
+              Locations
+            <img className={`w-[4vh] ml-[2vw] pt-[1.25vh] ${showLocations == false ? '' : 'hidden'}`} src={getBaseUrl('/assets/svgs/down-arrow.png')}/>
+            <img className={`w-[4vh] ml-[2vw] pt-[1.25vh] ${showLocations == true ? '' : 'hidden'}`} src={getBaseUrl('/assets/svgs/up-arrow.png')}/>
+            </button>
+            {showLocations && (
+              <div className='text-neonPurple text-[4vh] flex flex-col pl-[8vw] gap-[2vh]'>
+                <a href={getBaseUrl('/locations/Jacksonville')}>Jacksonville</a>
+                <a href={getBaseUrl('/locations/Wellington')}>Wellington</a>
+                <a href={getBaseUrl('/locations/The-Falls-Mall-Miami')}>The Falls Mall Miami</a>
+                <a href={getBaseUrl('/locations/Coral-Square-Mall')}>Coral Square Mall</a>
+              </div>
+            )}
+            <div>Eat & Drink</div>
+            <div>Gallery</div>
+            <div>Play</div>
+            <button 
+                className=" w-[42vw] text-black self-center pm-md:hidden text-[4vh] pt-[.5vh] font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
+                onClick={() => setShowEventPlanner((prev) => !prev)}>
+                  Book Event
+            </button>
+          </div>
+        )}
     </nav>
   )
 }

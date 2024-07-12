@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const CustomRadioButton = ({ options, name, onChange }) => {
+const TimeButton = ({ options, name, onChange }) => {
   const [selected, setSelected] = useState(null);
 
   const handleClick = (value) => {
@@ -12,7 +12,7 @@ const CustomRadioButton = ({ options, name, onChange }) => {
   };
 
   return (
-    <div className="custom-radio-group flex flex-col items-start m-4">
+    <div className="custom-radio-group flex items-center justify-evenly m-4 mb-6">
       {options.map((option) => (
         <label
           key={option.value}
@@ -27,14 +27,18 @@ const CustomRadioButton = ({ options, name, onChange }) => {
             onChange={() => handleClick(option.value)}
             style={{ display: 'none' }}
           />
-          <h1 className={`font-neon text-3xl ${selected === option.value ? 'selected text-neonYellow' : 'text-neonPurple'}`}>{option.value}</h1>
+          <div className={`pm-sm:h-[13vh] pm-sm:w-[25vw] pm-md:w-[18vw] lm-sm:h-[15vh] lm-sm:w-[9vw] lm-lg:w-[7vw] lm-md:h-[12vh] justify-center flex border-2 p-2 rounded-md ${selected === option.value ? 'selected text-neonYellow border-neonYellow' : 'text-neonPurple border-neonPurple'}`}>
+            <h1 className='font-neonSans pm-sm:text-[8vh] lm-sm:text-[8vh] '>{option.value}</h1>
+            <h1 className='font-neon pm-sm:text-[3vh] lm-sm:text-[3vh]'>HR</h1>
+          </div>
+          
         </label>
       ))}
     </div>
   );
 };
 
-CustomRadioButton.propTypes = {
+TimeButton.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string.isRequired,
@@ -45,4 +49,4 @@ CustomRadioButton.propTypes = {
   onChange: PropTypes.func,
 };
 
-export default CustomRadioButton;
+export default TimeButton;

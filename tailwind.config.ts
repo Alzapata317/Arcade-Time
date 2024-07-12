@@ -34,6 +34,16 @@ const config: Config = {
         neon: ['NeonRetroDemoVersionRegular', 'sans-serif'],
         neonSans: ['neonSans', 'sans-serif'],
       },
+      screens: {
+        'pm-sm': { 'raw': '(min-width: 0px) and (orientation: portrait)' },
+        'lm-sm': { 'raw': '(min-width: 0px) and (orientation: landscape)' },
+        'pm-md': { 'raw': '(min-width: 641px) and (orientation: portrait)' },
+        'lm-md': { 'raw': '(min-width: 850px) and (orientation: landscape)' },
+        'pm-lg': { 'raw': '(min-width: 1201px) and (orientation: portrait)' },
+        'lm-lg': { 'raw': '(min-width: 1201px) and (orientation: landscape)' },
+        'pm-xl': { 'raw': '(min-width: 1800px) and (orientation: portrait)' },
+        'lm-xl': { 'raw': '(min-width: 1800px) and (orientation: landscape)' },
+      }
     },
   },
   plugins: [

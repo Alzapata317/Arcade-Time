@@ -34,7 +34,7 @@ export const ClientComponent = ({ children }: { children: React.ReactNode }) => 
     <>
         <GlobalStyles />
         <Nav />
-        <div className="mt-[193px]">
+        <div className="mt-[12vh] lm-lg:mt-[20vh]">
             {children}
         </div>
     </>

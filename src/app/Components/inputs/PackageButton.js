@@ -27,14 +27,14 @@ const PackageButton = ({ options, name, onChange }) => {
             onChange={() => handleClick(option.value)}
             style={{ display: 'none' }}
           />
-          <div className={`w-[175px] h-36 text-center flex flex-col border-2 p-2 rounded-md ${selected === option.value ? 'selected text-neonYellow border-neonYellow' : 'text-neonPurple border-neonPurple'}`}>
+          <div className={`pm-sm:h-[20vh] pm-sm:w-[40vw] pm-md:w-[27vw] lm-sm:w-[13vw] lm-sm:h-[22vh] lm-md:w-[18vw] lm-md:h-[20vh] lm-lg:w-[12vw] lm-lg:h-[20vh] text-center flex flex-col border-2 p-2 rounded-md ${selected === option.value ? 'selected text-neonYellow border-neonYellow' : 'text-neonPurple border-neonPurple'}`}>
             <div className='flex w-full justify-center'>
-                <h1 className='font-neonSans text-5xl'>{option.value}</h1>
-                <p className='font-neonSans text-4xl pt-1'>$</p>
+                <h1 className='font-neonSans text-[5vh]'>{option.value}</h1>
+                <p className='font-neonSans text-[3.75vh] pt-[1vh]'>$</p>
             </div>
-            <p className='text-neonBlue text-md'>4 Pizzas</p>
-            <p className='text-neonBlue text-md'>6 Pitchers</p>
-            <p className='text-neonBlue text-md w-full'>{option.infinite}</p>
+            <p className='text-neonBlue text-[2vh]'>4 Pizzas</p>
+            <p className='text-neonBlue text-[2vh]'>6 Pitchers</p>
+            <p className='text-neonBlue text-[2vh] w-full'>{option.infinite}</p>
           </div>
 
         </label>

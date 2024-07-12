@@ -16,7 +16,7 @@ const Location: React.FC<LocationProps> = ({params} : {params : {place: string}}
 
   return (
     <div className="bg-black h-screen w-screen flex flex-col p-[10vh]">
-      <div className="text-neonYellow text-8xl font-neon text-center">
+      <div className="text-neonYellow pm-sm:text-[6vh] pm-md:text-[8vh] lm-sm:text-[8vh] font-neon text-center">
         {place}
       </div>
     </div>

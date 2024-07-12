@@ -12,9 +12,9 @@ const ScrollBarInput = ({ name, min, max, onChange }) => {
   };
 
   return (
-    <div className="w-[350px] flex flex-col h-[100px] justify-around">
+    <div className="pm-sm:w-[70vw] pm-md:w-[350px] lm-sm:w-[20vw] lm-md:w-[350px] flex flex-col justify-around">
         <div className="w-full flex flex-col items-center">
-            <h1 className="text-neonBlue text-7xl font-neonSans">{value}</h1>
+            <h1 className="text-neonBlue pm-sm:text-[6.5vh] lm-sm:text-[7vh] font-neonSans">{value}</h1>
         </div>
         <input
             type="range"

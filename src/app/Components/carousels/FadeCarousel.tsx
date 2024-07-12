@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import styles from '../styles/FadeCarousel.module.css';
+import styles from '../../styles/FadeCarousel.module.css';
 import Fade from 'embla-carousel-fade';
-import { getImageUrl } from '../utils/getImageUrl';
+import { getBaseUrl } from '../../utils/getBaseUrl';
 
 const FadeCarousel = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({loop: true, duration: 40}, [Fade()]);
@@ -44,19 +44,19 @@ const FadeCarousel = () => {
       <div className={styles.fade__viewport} ref={emblaRef}>
         <div className={styles.fade__container}>
           <div className={`${styles.fade__slide} ${selectedIndex === 0 ? styles.isSelected : ''}`}>
-            <img className="" src={getImageUrl("/assets/images/food/wings.webp")} alt="Album one" />
+            <img className="block w-full object-cover pm-sm:h-[45vh] lm-sm:h-[80vh] pm-md:h-[70vh]" src={getBaseUrl("/assets/images/food/wings.webp")} alt="Album one" />
           </div>
           <div className={`${styles.fade__slide} ${selectedIndex === 1 ? styles.isSelected : ''}`}>
-            <img className="" src={getImageUrl("/assets/images/food/sliders.jpg")} alt="Album two" />
+            <img className="block w-full object-cover pm-sm:h-[45vh] lm-sm:h-[80vh] pm-md:h-[70vh]" src={getBaseUrl("/assets/images/food/sliders.jpg")} alt="Album two" />
           </div>
           <div className={`${styles.fade__slide} ${selectedIndex === 2 ? styles.isSelected : ''}`}>
-            <img className="" src={getImageUrl("/assets/images/food/alfredo.jpeg")} alt="Album three" />
+            <img className="block w-full object-cover pm-sm:h-[45vh] lm-sm:h-[80vh] pm-md:h-[70vh]" src={getBaseUrl("/assets/images/food/alfredo.jpeg")} alt="Album three" />
           </div>
           <div className={`${styles.fade__slide} ${selectedIndex === 3 ? styles.isSelected : ''}`}>
-            <img className="" src={getImageUrl("/assets/images/food/margaritas.jpg")} alt="Album four" />
+            <img className="block w-full object-cover pm-sm:h-[45vh] lm-sm:h-[80vh] pm-md:h-[70vh]" src={getBaseUrl("/assets/images/food/margaritas.jpg")} alt="Album four" />
           </div>
           <div className={`${styles.fade__slide} ${selectedIndex === 4 ? styles.isSelected : ''}`}>
-            <img className="" src={getImageUrl("/assets/images/food/funnel-cake.png")} alt="Album five" />
+            <img className="block w-full object-cover pm-sm:h-[45vh] lm-sm:h-[80vh] pm-md:h-[70vh]" src={getBaseUrl("/assets/images/food/funnel-cake.png")} alt="Album five" />
           </div>
         </div>
       </div>
