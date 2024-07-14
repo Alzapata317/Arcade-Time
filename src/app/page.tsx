@@ -66,7 +66,7 @@ export default function Home() {
           <div className=""></div>
           <div className="text-white lm-sm:text-[3vh] lm-lg:text-[4vh] text-center flex lm-lg:items-center col-span-5 p-10 font-serif">Looking for some retro gaming excitement ? Check out our massive Retro arcade games and equipment. Pac-Man, Galaga, Street Fighter to name a few.</div>
         </div>
-        <img alt="" className="absolute z-10 w-full h-full" src={getBaseUrl("/assets/images/arcade-machine.png")}/>
+        <img alt="" className="absolute z-10 w-full h-full" src={getBaseUrl("/assets/images/Arcade-Machine.png")}/>
       </section>
       <section id="portrait-retro-games" className="pm-sm:h-[90vh] pm-md:h-[100vh] lm-sm:hidden flex flex-col">
         <div className="pm-sm:h-[90vh] pm-md:h-[100vh] bg-cover relative" style={{ backgroundImage: `url(${getBaseUrl('/assets/images/neon-background.jpg')})`}}>
