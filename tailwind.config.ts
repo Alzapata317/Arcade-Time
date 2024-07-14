@@ -43,7 +43,7 @@ const config: Config = {
         'lm-lg': { 'raw': '(min-width: 1201px) and (orientation: landscape)' },
         'pm-xl': { 'raw': '(min-width: 1800px) and (orientation: portrait)' },
         'lm-xl': { 'raw': '(min-width: 1800px) and (orientation: landscape)' },
-      }
+      },
     },
   },
   plugins: [

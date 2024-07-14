@@ -49,10 +49,10 @@ export default function Home() {
       </section>
       <section id="resturant" className="pm-sm:h-[45vh] pm-md:h-[70vh] lm-sm:h-[80vh] w-full flex justify-center items-center bg-black relative">
           <FadeCarousel/>
-          <div className="absolute lm-lg:top-[10vh] pm-sm:mx-[10vw] pm-md:mx-[20vw] lm-sm:left-[12vh] bg-opacity-40 bg-black lm-sm:w-[30vw] lm-md:w-[45vw] lm-lg:w-[35vw] pm-sm:h-[40vh] lm-sm:h-[50vh] lm-lg:h-[47vh] lm-xl:h-[42vh]  pm-sm:gap-5 pm-md:gap-9 lm-sm:gap-3 lm-md:gap-9 rounded-3xl flex flex-col items-center lm-sm:p-5 lm-md:p-10 pm-sm:p-10">
+          <div className="absolute lm-lg:top-[10vh] pm-sm:mx-[10vw] pm-md:mx-[20vw] lm-sm:left-[12vh] bg-opacity-40 bg-black lm-sm:w-[30vw] lm-md:w-[45vw] lm-lg:w-[35vw] pm-sm:h-[40vh] pm-xl:h-[35vh] lm-sm:h-[50vh] lm-lg:h-[47vh] lm-xl:h-[42vh]  pm-sm:gap-5 pm-md:gap-9 lm-sm:gap-3 lm-md:gap-9 rounded-3xl flex flex-col items-center lm-sm:p-5 lm-md:p-10 pm-sm:p-10">
             <p className="text-white font-bold pm-sm:text-[2.5vh] pm-md:text-[3vh] lm-sm:text-[4vh] lm-lg:text-[4.5vh]">“Indulge Your Senses, Every Meal, Every Time!”</p>
             <p className="text-gray-300 pm-sm:text-[1.5vh] lm-sm:text-[2vh]">Limited Time Offer: Buy One Get One Free on All Wing Orders! Come for the wings, stay for the taste. Dive into deliciousness today and double your delight!</p>
-            <button className=" bg-gradient-to-b from-neonPurple to-indigo-700 lm-sm:w-[27vw] lm-lg:w-[20vw] pm-sm:h-[6vh] pm-md:h-[6vh] pm-sm:w-[50vw] pm-md:w-[30vw] lm-sm:h-[8vh] lm-lg:h-[7vh] rounded-3xl pm-sm:text-[2vh] lm-sm:text-[3vh] lm-xl:mt-[2vh] font-bold">Make a Reservation!</button>
+            <button className=" bg-gradient-to-b from-neonPurple to-indigo-700 lm-sm:w-[27vw] lm-lg:w-[20vw] pm-sm:h-[6vh] pm-md:h-[6vh] pm-sm:w-[50vw] pm-md:w-[30vw] pm-xl:w-[40vw] lm-sm:h-[8vh] lm-lg:h-[7vh] rounded-3xl pm-sm:text-[2vh] lm-sm:text-[3vh] lm-xl:mt-[2vh] font-bold">Make a Reservation!</button>
           </div>
       </section>
       <section id="retro-games" className="lm-sm:h-[80vh] bg-cover relative hidden lm-sm:block" style={{ backgroundImage: `url(${getBaseUrl('/assets/images/neon-background.jpg')})` }}>
@@ -169,7 +169,7 @@ export default function Home() {
         <div className="w-full pm-md:h-[8vh] lm-sm:h-[15vh] flex justify-center  relative">
           <a 
             href="https://www.google.com/search?q=arcade+time+entertainment&client=safari&sca_esv=063c593922e84ff5&rls=en&ei=gS-CZuDLLb2WwbkP_rOw-AM&ved=0ahUKEwigkJbL_4SHAxU9SzABHf4ZDD8Q4dUDCBA&uact=5&oq=arcade+time+entertainment&gs_lp=Egxnd3Mtd2l6LXNlcnAiGWFyY2FkZSB0aW1lIGVudGVydGFpbm1lbnQyERAuGIAEGJECGMcBGIoFGK8BMgUQABiABDIFEAAYgAQyBRAAGIAEMgsQLhiABBjHARivATIFEAAYgAQyBRAAGIAEMiAQLhiABBiRAhjHARiKBRivARiXBRjcBBjeBBjgBNgBAUjXH1DvAlinHnACeAGQAQCYAYIBoAHDCqoBBDEzLjK4AQPIAQD4AQGYAhGgAusLwgIKEAAYsAMY1gQYR8ICCBAuGIAEGOUEwgIKEAAYgAQYQxiKBcICGhAuGIAEGMcBGK8BGJcFGNwEGN4EGOAE2AEBwgIQEC4YgAQYQxjHARiKBRivAZgDAIgGAZAGB7oGBggBEAEYFJIHBDE0LjOgB76uAQ&sclient=gws-wiz-serp#" 
-            className="pm-sm:w-[33vw] pm-sm:h-[5vh] lm-sm:w-[30vw] lm-lg:w-[23vw] lm-sm:h-[7vh] font-neon pm-sm:text-[3vh] lm-sm:text-[5vh] text-neonYellow pm-sm:pt-[.75vh] lm-sm:pt-[1vh] absolute pm-sm:top-[7vh] lm-sm:top-[10vh] justify-center items-center flex hover:shadow-neonYellow rounded-lg z-10 border-neonYellow border-2">
+            className="pm-sm:w-[33vw] pm-sm:h-[5vh] pm-xl:w-[43vw] lm-sm:w-[30vw] lm-lg:w-[23vw] lm-sm:h-[7vh] font-neon pm-sm:text-[3vh] lm-sm:text-[5vh] text-neonYellow pm-sm:pt-[.75vh] lm-sm:pt-[1vh] absolute pm-sm:top-[7vh] lm-sm:top-[10vh] justify-center items-center flex hover:shadow-neonYellow rounded-lg z-10 border-neonYellow border-2">
               Give us a Review!
           </a>
         </div>
@@ -191,7 +191,7 @@ export default function Home() {
               </div>
             </div>
             <div className="pm-sm:w-full pm-md:w-3/5 w-3/5 flex pm-sm:flex-col pm-md:flex-row justify-center">
-              <div className="justify-evenly pm-sm:w-full pm-md:w-2/5 lm-sm:w-2/5 gap-[1vh] pm-sm:text-[1.4vh] pm-md:text-[1.75vh] lm-sm:text-[1.75vh] h-full flex pm-sm:flex-row pm-md:flex-col lm-sm:flex-col pt-[3.25vh]">
+              <div className="justify-evenly pm-sm:w-full pm-md:w-2/5 lm-sm:w-2/5 gap-[1vh] pm-sm:text-[1.4vh] pm-md:text-[1.75vh] pm-xl:text-[1.5vh] lm-sm:text-[1.75vh] h-full flex pm-sm:flex-row pm-md:flex-col lm-sm:flex-col pt-[3.25vh]">
                 <p className="">Jacksonville</p>
                 <p className="">Wellington</p>
                 <p className="">The Falls Mall Miami</p>
@@ -199,9 +199,9 @@ export default function Home() {
               </div>
               <div className="flex pm-sm:flex-row-reverse pm-md:flex-col lm-sm:flex-col pm-sm:pt-[2.5vh] pm-md:pt-[2vh] pm-sm:pl-[2vw] pm-sm:justify-center pm-md:justify-around  pm-md:w-3/5 lm-sm:w-3/5 h-full w-full pt-[3.25vh]">
                 <div className="lm-sm:w-1/2 flex flex-col justify-center lm-lg:mb-[2vh]">
-                  <button className="pm-sm:w-[35vw] bg-gradient-to-t from-purple-950 to-indigo-950 text-center pm-md:w-[26vw] pm-sm:h-[5vh] lm-sm:w-[16vw] lm-lg:w-[12vw] lm-sm:h-[6vh] pm-sm:text-[1.5vh] pm-md:text-[1.75vh] lm-sm:text-[1.75vh] rounded-full pm-sm:ml-[3vw] pm-md:ml-[0]">Join our Newsletter</button>
+                  <button className="pm-sm:w-[35vw] bg-gradient-to-t from-purple-950 to-indigo-950 text-center pm-md:w-[26vw] pm-sm:h-[5vh] lm-sm:w-[16vw] lm-lg:w-[12vw] lm-sm:h-[6vh] pm-sm:text-[1.5vh] pm-md:text-[1.75vh] pm-xl:text-[1.5vh] lm-sm:text-[1.75vh] rounded-full pm-sm:ml-[3vw] pm-md:ml-[0]">Join our Newsletter</button>
                 </div>
-                <div className="lm-sm:w-1/2 pm-sm:items-center pm-md:items-start pm-sm:gap-[4vw] pm-md:gap-[1vh] lm-sm:gap-[1vh] pm-sm:text-[1.5vh] pm-md:text-[1.75vh] lm-sm:text-[1.75vh] flex pm-sm:flex-row pm-md:flex-col lm-sm:flex-col pm-md:pl-[2vw] lm-sm:pl-[1vw] ">
+                <div className="lm-sm:w-1/2 pm-sm:items-center pm-md:items-start pm-sm:gap-[4vw] pm-md:gap-[1vh] lm-sm:gap-[1vh] pm-sm:text-[1.5vh] pm-md:text-[1.75vh] pm-xl:text-[1.5vh] lm-sm:text-[1.75vh] flex pm-sm:flex-row pm-md:flex-col lm-sm:flex-col pm-md:pl-[2vw] lm-sm:pl-[1vw] ">
                   <p className="">Contact Us</p>
                   <p className="">Careers</p>
                 </div>
@@ -209,7 +209,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-full pm-sm:text-center lm-sm:h-[20%] lm-sm:pl-[4vw] text-white  pm-sm:text-[.75vh] pm-md:text-[2vh] lm-sm:text-[2vh]">
+        <div className="w-full pm-sm:text-center lm-sm:h-[20%] lm-sm:pl-[4vw] text-white  pm-sm:text-[.75vh] pm-md:text-[2vh] pm-xl:text-[1vh] lm-sm:text-[2vh]">
           Copyright © 2024 Arcade Time USA LLC - All Rights Reserved
         </div>
       </footer>
@@ -217,7 +217,7 @@ export default function Home() {
         <img
           src={getBaseUrl("/assets/images/ship.png")}
           alt="Back to Top"
-          className="fixed bottom-[4vh] right-[2vw] p-3 pm-sm:h-[8vh] lm-sm:h-[13vh] pm-sm:h-[10vh] lm-md:h-[8vh] lm-lg:h-[7vh]  z-40"
+          className="fixed bottom-[4vh] right-[2vw] p-3 pm-sm:h-[8vh] lm-sm:h-[13vh] pm-sm:h-[10vh] pm-xl:h-[5vh] lm-md:h-[8vh] lm-lg:h-[7vh]  z-40"
           onClick={scrollToTop}
         />
       )}

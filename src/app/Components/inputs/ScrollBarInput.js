@@ -24,7 +24,7 @@ const ScrollBarInput = ({ name, min, max, onChange }) => {
             max={max}
             value={value}
             onChange={handleChange}
-            className="scroll-bar"
+            className="pm-xl:scale-[3]"
         />
     </div>
   );

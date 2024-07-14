@@ -75,7 +75,7 @@ export default function Nav() {
             <CustomRadioButton options={options} name="customOption" onChange={handleRadioChange} />
             
             <h1 className="w-full font-neon text-neonBlue text-[4vh]">Party Size</h1>
-            <div className="w-full pm-sm:h-[14vh] pm-md:h-24 lm-sm:h-[17vh] flex flex-col pm-md:m-4 items-center justify-center">
+            <div className="w-full pm-sm:h-[14vh] pm-md:h-24 pm-xl:h-[12vh] lm-sm:h-[17vh] flex flex-col pm-md:m-4 items-center justify-center">
                 <ScrollBarInput name="number" min={1} max={10} onChange={handleNumberChange} />
             </div>
 
@@ -101,34 +101,34 @@ export default function Nav() {
         <div className="w-1/2 pm-md:w-2/3  lm-sm:px-12 flex flex-col justify-evenly items-center">
           <div className="w-full flex justify-evenly items-center relative">
               <button 
-                className="flex justify-evenly w-[32vw] h-[5.5vh] pm-md:w-[19vw] lm-sm:w-[10vw] lm-md:w-[12vw] lm-sm:h-[5.25vh] lm-xl:rounded-2xl text-center items-center text-neonBlue border-2 border-neonBlue rounded-lg lm-md:mx-10 hover:shadow-neonBlue">
+                className="flex justify-evenly w-[32vw] h-[5.5vh] pm-md:w-[19vw] lm-sm:w-[10vw] pm-xl:w-[22vw] pm-xl:h-[4vh] lm-md:w-[12vw] lm-sm:h-[5.25vh] lm-xl:rounded-2xl text-center items-center text-neonBlue border-2 border-neonBlue rounded-lg lm-md:mx-10 hover:shadow-neonBlue">
                 <img 
-                  className="h-[3.25vh] lm-sm:h-[3.5vh]" 
+                  className="h-[3.25vh] lm-sm:h-[3.5vh] pm-xl:h-[2.5vh]" 
                   src={getBaseUrl("/assets/images/Reservation.png")}
                 />
                 <h1 
-                  className="font-neon text-center self-center text-[2.5vh] lm-sm:text-[2.5vh] pt-[.4vh] ">
+                  className="font-neon text-center self-center text-[2.5vh] pm-xl:text-[2vh] lm- pt-[.4vh] ">
                     Reserve
                 </h1>
               </button>
               <button 
-                className=" w-[28vw] pm-md:w-[19vw] pm-md:h-[5.5vh] lm-sm:w-[10vw] lm-md:w-[14vw] lm-lg:w-[12vw] lm-sm:h-[5.25] lm-xl:rounded-2xl lm-md:mx-10 text-[2vh] pm-md:text-[2.5vh] lm-sm:text-[3.25vh] pt-[.5vh] hidden pm-md:block lm-sm:block text-black font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
+                className=" w-[28vw] pm-md:w-[19vw] pm-md:h-[5.5vh] lm-sm:w-[10vw] pm-xl:w-[22vw] pm-xl:h-[4vh] lm-md:w-[14vw] lm-lg:w-[12vw] lm-sm:h-[5.25] lm-xl:rounded-2xl lm-md:mx-10 text-[2vh] pm-md:text-[2.5vh] lm-sm:text-[3.25vh] pm-xl:text-[2vh] pt-[.5vh] hidden pm-md:block lm-sm:block text-black font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
                 onClick={() => setShowEventPlanner((prev) => !prev)}>
                   Book Event
               </button>
               <button 
-              className='w-2vh lm-sm:hidden'
+              className='w-2vh lm-sm:hidden pm-xl:hidden'
               onClick={() => setShowList((prev: any) => !prev)}>
-                <Divide color='#45f3ff'/>
+                <Divide color='#45f3ff' />
               </button>
           </div>
-          <section className="text-[3vh] w-full justify-evenly z-10 relative hidden lm-sm:flex">
+          <section className="text-[3vh] w-full justify-evenly z-10 relative hidden lm-sm:flex pm-xl:flex pm-xl:text-[2vh]">
             <h1 className="font-neon text-neonBlue hover:underline underline-offset-8">Eat & Drink</h1>
             <h1 className="font-neon text-neonBlue hover:underline underline-offset-8">Play</h1>
             <h1 className="font-neon text-neonBlue hover:underline underline-offset-8">Gallery</h1>
             <button onClick={() => handleToggleDropdown('dropdown4')} className="font-neon text-neonBlue hover:underline underline-offset-8">Locations</button>
             {openDropdown === 'dropdown4' && (
-                <div className="absolute p-[1vh] top-[6vh] right-[7vh] lm-sm:w-[25vh] lm-sm:h-[17vh] bg-slate-900 text-neonBlue font-neon rounded-lg text-[2vh] flex flex-col justify-around">
+                <div className="absolute p-[1vh] top-[6vh] right-[7vh] pm-xl:top-[4vh] pm-xl:right-[4vh] lm-sm:w-[25vh] lm-sm:h-[17vh] bg-slate-900 text-neonBlue font-neon rounded-lg text-[2vh] flex flex-col justify-around">
                 <a href={getBaseUrl('/locations/Jacksonville')}>Jacksonville</a>
                 <a href={getBaseUrl('/locations/Wellington')}>Wellington</a>
                 <a href={getBaseUrl('/locations/The-Falls-Mall-Miami')}>The Falls Mall Miami</a>
