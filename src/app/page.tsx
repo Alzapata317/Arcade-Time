@@ -40,7 +40,13 @@ export default function Home() {
   return (
     <main className={`overflow-hidden ${showList == true ? 'hidden' : ''}`}>
       <section id="intro" className="h-[60vh] lm-sm:h-[80vh] w-full relative">
-        <div className="h-[60vh] lm-sm:h-[80vh]  w-full bg-no-repeat bg-cover items-center flex justify-center" style={{ backgroundImage: `url(${getBaseUrl("/assets/images/Banner1.jpg")})` }}>
+        <div className="h-[60vh] lm-sm:h-[80vh]  w-full bg-no-repeat bg-cover items-center flex justify-center pm-sm:hidden pm-md:flex pm-xl:hidden" style={{ backgroundImage: `url(${getBaseUrl("/assets/images/Banner1.jpg")})` }}>
+        <div className="bg-[#00000080] pm-sm:px-[12vw] lm-sm:pl-24 flex flex-col items-start justify-center pm-sm:items-center  lm-sm:w-[100%] h-[60vh] lm-sm:h-[80vh]">
+            <img alt="" className="pm-sm:w-[45vh] lm-sm:w-[60vh]" src={getBaseUrl("/assets/images/LogoTransparent.webp")}/>
+            <h1 className="text-white pm-sm:text-[2vh] pm-md:text-[2.5vh] lm-sm:text-[3vh] text-center lm-sm:w-[60vh]">Grab your blaster and defend the universe against waves of approaching aliens. Show off your skills on a massive display for everyone to see. Sit back and enjoy the ride. Arcade Time Entertainment has something for everyone!</h1>
+          </div>
+        </div>
+        <div className="h-[60vh] lm-sm:h-[80vh]  w-full bg-no-repeat bg-cover items-center flex justify-center pm-md:hidden pm-xl:flex lm-sm:hidden" style={{ backgroundImage: `url(${getBaseUrl("/assets/images/portrait-banner.jpg")})` }}>
         <div className="bg-[#00000080] pm-sm:px-[12vw] lm-sm:pl-24 flex flex-col items-start justify-center pm-sm:items-center  lm-sm:w-[100%] h-[60vh] lm-sm:h-[80vh]">
             <img alt="" className="pm-sm:w-[45vh] lm-sm:w-[60vh]" src={getBaseUrl("/assets/images/LogoTransparent.webp")}/>
             <h1 className="text-white pm-sm:text-[2vh] pm-md:text-[2.5vh] lm-sm:text-[3vh] text-center lm-sm:w-[60vh]">Grab your blaster and defend the universe against waves of approaching aliens. Show off your skills on a massive display for everyone to see. Sit back and enjoy the ride. Arcade Time Entertainment has something for everyone!</h1>
