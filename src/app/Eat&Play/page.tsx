@@ -6,7 +6,7 @@ import WineGlass, { Wine, Wines } from "../Components/restuarant/Wine";
 import { getBaseUrl } from "../utils/getBaseUrl";
 import RegularDrinks, {Drink, Drinks}from "../Components/restuarant/Drink";
 
-export default function page() {
+export default function Page() {
   const [selectedTab, setSelectedTab] = useState<keyof typeof menuItems>("Wines");
   const wineTypes = [...new Set(
     Wines.filter(wine => ["Red", "White"].includes(wine.type))
@@ -105,7 +105,7 @@ export default function page() {
                   <div className="flex flex-wrap pm-sm:flex-col">
                   {/* <h1 className="text-neonBlue w-full text-center text-[4vh]">Drinks</h1> */}
                     {drinkTypesWithPrices.map((other) => (
-                      <div className="flex flex-col flex-wrap w-1/3 pm-sm:w-full px-[4vw]">
+                      <div className="flex flex-col flex-wrap w-1/3 pm-sm:w-full px-[4vw]" key={other.type}>
                         <div className="flex justify-between text-[3vh]">
                           <div className="text-neonPurple">{other.type}</div>
                           <div className="text-neonBlue">{other.totalPrice != null ? "$" + other.totalPrice : ""}</div>
@@ -124,10 +124,10 @@ export default function page() {
                     ))}
                     <h1 className="text-neonPurple font-neon w-full text-center text-[6vh] h-[15vh]">Beers</h1>
                     {beerTypes.map((type) => (
-                      <div className="w-1/4 pm-sm:w-full flex flex-wrap flex-col px-[3vw]">
+                      <div className="w-1/4 pm-sm:w-full flex flex-wrap flex-col px-[3vw]" key={type}>
                         <div className="text-neonPurple text-[3vh]">{type}</div>
                         {Object.entries(groupedBeersByTypeAndPrice(type)).map(([price, beers]) => (
-                          <div className="flex justify-between mb-[4vh]">
+                          <div className="flex justify-between mb-[4vh]" key={type}>
                             <div>
                               {beers.map((beer) => (
                                 <RegularDrinks
