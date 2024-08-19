@@ -53,7 +53,7 @@ const config: Config = {
           textShadow: '0 0 5px #45f3ff, 0 0 10px #45f3ff, 0 0 15px #45f3ff, 0 0 20px #45f3ff, 0 0 25px #45f3ff',
         },
         '.text-shadow-neon-pink': {
-          textShadow: '0 0 5px #ff6ec7, 0 0 10px #ff6ec7, 0 0 15px #ff6ec7, 0 0 20px #ff6ec7, 0 0 25px #ff6ec7',
+          textShadow: '0 0 5px #ff6ec7, 0 0 10px #ff6ec7, 0 0 0px #ff6ec7, 0 0 20px #ff6ec7, 0 0 25px #ff6ec7',
         },
         '.text-shadow-neon-purple': {
           textShadow: '0 0 5px #c77dff, 0 0 10px #c77dff, 0 0 15px #c77dff, 0 0 20px #c77dff, 0 0 25px #c77dff',

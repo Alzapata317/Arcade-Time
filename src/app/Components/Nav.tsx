@@ -123,9 +123,9 @@ export default function Nav() {
               </button>
           </div>
           <section className="text-[3vh] w-full justify-evenly z-10 relative hidden lm-sm:flex pm-xl:flex pm-xl:text-[2vh]">
-            <h1 className="font-neon text-neonBlue hover:underline underline-offset-8">Eat & Drink</h1>
-            <h1 className="font-neon text-neonBlue hover:underline underline-offset-8">Play</h1>
-            <h1 className="font-neon text-neonBlue hover:underline underline-offset-8">Gallery</h1>
+            <a href={getBaseUrl("/Eat&Play")} className="font-neon text-neonBlue hover:underline underline-offset-8">Eat & Play</a>
+            <a className="font-neon text-neonBlue hover:underline underline-offset-8">Contact Us</a>
+            <a className="font-neon text-neonBlue hover:underline underline-offset-8">Gallery</a>
             <button onClick={() => handleToggleDropdown('dropdown4')} className="font-neon text-neonBlue hover:underline underline-offset-8">Locations</button>
             {openDropdown === 'dropdown4' && (
                 <div className="absolute p-[1vh] top-[6vh] right-[7vh] pm-xl:top-[4vh] pm-xl:right-[4vh] lm-sm:w-[25vh] lm-sm:h-[17vh] bg-slate-900 text-neonBlue font-neon rounded-lg text-[2vh] flex flex-col justify-around">
@@ -153,7 +153,7 @@ export default function Nav() {
                 <a href={getBaseUrl('/locations/Coral-Square-Mall')}>Coral Square Mall</a>
               </div>
             )}
-            <div>Eat & Drink</div>
+            <a href={getBaseUrl('/Eat&Play')}>Eat & Play</a>
             <div>Gallery</div>
             <div>Play</div>
             <button 
