@@ -124,7 +124,7 @@ export default function Nav() {
           </div>
           <section className="text-[3vh] w-full justify-evenly z-10 relative hidden lm-sm:flex pm-xl:flex pm-xl:text-[2vh]">
             <a href={getBaseUrl("/Eat&Play")} className="font-neon text-neonBlue hover:underline underline-offset-8">Eat & Play</a>
-            <a className="font-neon text-neonBlue hover:underline underline-offset-8">Contact Us</a>
+            <a href={getBaseUrl("/ContactUs")} className="font-neon text-neonBlue hover:underline underline-offset-8">Contact Us</a>
             <a className="font-neon text-neonBlue hover:underline underline-offset-8">Gallery</a>
             <button onClick={() => handleToggleDropdown('dropdown4')} className="font-neon text-neonBlue hover:underline underline-offset-8">Locations</button>
             {openDropdown === 'dropdown4' && (

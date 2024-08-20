@@ -6,7 +6,7 @@ import WineGlass, { Wine, Wines } from "../Components/restuarant/Wine";
 import { getBaseUrl } from "../utils/getBaseUrl";
 import RegularDrinks, {Drink, Drinks}from "../Components/restuarant/Drink";
 
-export default function Page() {
+export default function EatPlay() {
   const [selectedTab, setSelectedTab] = useState<keyof typeof menuItems>("Wines");
   const wineTypes = [...new Set(
     Wines.filter(wine => ["Red", "White"].includes(wine.type))
