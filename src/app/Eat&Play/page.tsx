@@ -7,7 +7,7 @@ import { getBaseUrl } from "../utils/getBaseUrl";
 import RegularDrinks, {Drink, Drinks}from "../Components/restuarant/Drink";
 
 export default function EatPlay() {
-  const [selectedTab, setSelectedTab] = useState<keyof typeof menuItems>("Wines");
+  const [selectedTab, setSelectedTab] = useState<keyof typeof menuItems>("Entrees");
   const wineTypes = [...new Set(
     Wines.filter(wine => ["Red", "White"].includes(wine.type))
           .map(wine => wine.type)
@@ -70,10 +70,10 @@ export default function EatPlay() {
             ))}
           </div>      
           {selectedTab === "Pizzas" && (
-            <div className="text-neonBlue lm-xl:text-[1.75vh] mt-[1vh] text-neonPurple font-neon text-center pm-sm:text-[1.5vh]">All Pizzas are 16" Large Hand Made Pizzas with the freshest ingredients</div>
+            <div className="text-[#FF00FF] lm-xl:text-[1.75vh] mt-[1vh] text-neonPurple font-neon text-center pm-sm:text-[1.5vh]">All Pizzas are 16" Large Hand Made Pizzas with the freshest ingredients</div>
           )}
           {(selectedTab === "Entrees" || selectedTab === "Appetizers" || selectedTab === "Salads") && (
-            <div className="text-neonBlue lm-xl:text-[1.75vh] mt-[1vh] text-neonPurple font-neon text-center pm-sm:text-[1.5vh]">Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions</div>
+            <div className="text-[#FF00FF] lm-xl:text-[1.75vh] mt-[1vh] text-neonPurple font-neon text-center pm-sm:text-[1.5vh]">Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions</div>
           )}
           {menuItems[selectedTab] && (
             <div className="px-[5vw] pt-[4vh] font-neon">
@@ -107,7 +107,7 @@ export default function EatPlay() {
                     {drinkTypesWithPrices.map((other) => (
                       <div className="flex flex-col flex-wrap w-1/3 pm-sm:w-full px-[4vw]" key={other.type}>
                         <div className="flex justify-between text-[3vh]">
-                          <div className="text-neonPurple">{other.type}</div>
+                          <div className="text-[#FF00FF]">{other.type}</div>
                           <div className="text-neonBlue">{other.totalPrice != null ? "$" + other.totalPrice : ""}</div>
                         </div>
                         <div className="mb-[4vh]">
@@ -122,10 +122,10 @@ export default function EatPlay() {
                         </div>
                       </div>
                     ))}
-                    <h1 className="text-neonPurple font-neon w-full text-center text-[6vh] h-[15vh]">Beers</h1>
+                    <h1 className="text-[#FF00FF] font-neon w-full text-center text-[6vh] h-[15vh]">Beers</h1>
                     {beerTypes.map((type) => (
                       <div className="w-1/4 pm-sm:w-full flex flex-wrap flex-col px-[3vw]" key={type}>
-                        <div className="text-neonPurple text-[3vh]">{type}</div>
+                        <div className="text-[#FF00FF] text-[3vh]">{type}</div>
                         {Object.entries(groupedBeersByTypeAndPrice(type)).map(([price, beers]) => (
                           <div className="flex justify-between mb-[4vh]" key={type}>
                             <div>

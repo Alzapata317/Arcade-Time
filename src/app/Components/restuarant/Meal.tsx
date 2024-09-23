@@ -63,7 +63,7 @@ const Meal: React.FC<Menu> = ({name, description, price}) => {
     return (
         <div className="flex justify-between mb-[3vh] lm-sm:w-[23vw] lm-sm:mx-[3vw] pm-md:text-[2vh] lm-md:text-[3vh]">
             <div>
-                <h1 className="text-neonPurple">{name}</h1>
+                <h1 className="text-[#FF00FF]">{name}</h1>
                 <p className="lm-md:text-[2vh]">{description}</p>
             </div>
             <p>${price}</p>

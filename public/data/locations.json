@@ -1,0 +1,78 @@
+[   
+        {
+        "place": "Jacksonville",
+        "description": "Arcade Time Entertainment is a state-of-the-art entertainment company offering fun for the whole family. We offer the best selection of Arcade Games, Virtual Reality, and Motion Simulation Rides. From the latest and greatest to the Retro Classics, we have something for everyone. Party Time? Try our all-inclusive party packages for children and adults.",
+        "image": "/assets/images/locations/jacksonville-main.webp",
+        "amenities": "Arcade, VR, Motion Simulations, Restaurant",
+        "eventImg": "jacksonville-event-image.jpg",
+        "address": "",
+        "phonenumber": "",
+        "packagelink": "",
+        "hours": [
+            {"Monday": "11AM - 12AM"},
+            {"Tuesday": "11AM - 12AM"},
+            {"Wednesday": "11AM - 12AM"},
+            {"Thursday": "11AM - 12AM"},
+            {"Friday": "11AM - 2AM"},
+            {"Saturday": "10AM - 2AM"},
+            {"Sunday": "10AM - 12AM"} 
+        ]
+        },
+        {
+        "place": "Wellington",
+        "description": "",
+        "image": "wellington-image-url.jpg",
+        "amenities": "Arcade, Party Rooms",
+        "eventImg": "wellington-event-image.jpg",
+        "address": "10300 Forest Hill Blvd #251 Wellington, Fl 33414",
+        "phonenumber": "561-247-8463",
+        "packagelink": "",
+        "hours": [
+            {"Monday": "10AM - 8PM"},
+            {"Tuesday": "10AM - 8PM"},
+            {"Wednesday": "10AM - 8PM"},
+            {"Thursday": "10AM - 8PM"},
+            {"Friday": "10AM - 8PM"},
+            {"Saturday": "10AM - 8PM"},
+            {"Sunday": "11AM - 6PM"} 
+        ]
+        },
+        {
+        "place": "The-Falls-Mall-Miami",
+        "description": "Arcade Time Entertainment is a state-of-the-art entertainment company offering fun for the whole family. We offer the best selection of Arcade Games, Virtual Reality, and Motion Simulation Rides. From the latest and greatest to the Retro Classics, we have something for everyone. Party Time? Try our all-inclusive party packages for children and adults. Hungry? Fun has never tasted so good! Come dine in our amazing arcade themed restaurant for an experience unlike any other.",
+        "image": "/assets/images/locations/falls-main.webp",
+        "amenities": "Arcade, VR, Food Court",
+        "eventImg": "/assets/images/locations/Falls-Event.webp",
+        "address": "8888 SW 136th St. #395A, Miami Fl. 33176",
+        "phonenumber": "786-250-3165",
+        "packagelink": "https://us.partywirks.com/storefront_express/main/vendor/arcadetimekendall/624/?customer=1",
+        "hours": [
+            {"Monday": "11AM - 12AM"},
+            {"Tuesday": "11AM - 12AM"},
+            {"Wednesday": "11AM - 12AM"},
+            {"Thursday": "11AM - 12AM"},
+            {"Friday": "11AM - 2AM"},
+            {"Saturday": "10AM - 2AM"},
+            {"Sunday": "10AM - 12AM"} 
+        ]
+        },
+        {
+        "place": "Coral-Square-Mall",
+        "description": "",
+        "image": "coral-square-image-url.jpg",
+        "amenities": "Arcade, Party Packages",
+        "eventImg": "coral-square-event-image.jpg",
+        "address": "9053 W Atlantic Blvd, Coral Springs, Fl 33071",
+        "phonenumber": "954-312-9663",
+        "packagelink": "",
+        "hours": [
+            {"Monday": "11AM - 12AM"},
+            {"Tuesday": "11AM - 12AM"},
+            {"Wednesday": "11AM - 12AM"},
+            {"Thursday": "11AM - 12AM"},
+            {"Friday": "11AM - 2AM"},
+            {"Saturday": "10AM - 2AM"},
+            {"Sunday": "10AM - 12AM"} 
+        ]
+        }
+]

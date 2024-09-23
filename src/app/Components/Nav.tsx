@@ -2,10 +2,11 @@ import CustomRadioButton from './inputs/CustomRadioButton';
 import ScrollBarInput from './inputs/ScrollBarInput';
 import TimeButton from './inputs/TimeButton';
 import PackageButton from './inputs/PackageButton';
-import { useContext, useState } from 'react';
+import { useContext, useState, useRef } from 'react';
 import { getBaseUrl } from '../utils/getBaseUrl';
 import { Divide } from 'hamburger-react';
 import { AppContext } from '../../../context/AppContext';
+import Link from 'next/link';
 
 interface PackageOption {
     value: string;
@@ -63,6 +64,17 @@ export default function Nav() {
         e.preventDefault();
         console.log('Form Data:', formData);
       };
+        const secondButtonRef = useRef<HTMLButtonElement>(null);
+      
+        const handleClick = () => {
+          if (secondButtonRef.current) {
+            secondButtonRef.current.click();
+          }
+        };
+      
+        const handleDivideButtonClick = () => {
+          alert('Second button clicked!');
+        };
   return (
         <nav className="shadow-neonPink lm-sm:h-[20vh] h-[12vh] flex fixed w-screen top-0 bg-black z-20">
         {showEventPlanner && (
@@ -93,10 +105,10 @@ export default function Nav() {
         )}
         <div className="w-1/2 pm-md:w-1/3 relative flex justify-center lm-sm:justify-end  items-center bg-black">
           <img alt="" className="lm-sm:w-[40vw] lm-sm:h-[10vh] absolute top-0 left-0 hidden lm-sm:block" src={getBaseUrl("/assets/images/Left-Nav.png")}/>
-          <a className='z-10' href={getBaseUrl('/')}>
+          <Link className='z-10' href={getBaseUrl('/')}>
             <img alt="" className="lm-sm:w-[40vw] lm-sm:h-[17vh] z-10 hidden lm-sm:block" src={getBaseUrl("/assets/images/Arcade-Time-Logo3.webp")}/>
             <img alt="" className="h-[10vh] lm-sm:w-[40vw] lm-sm:h-[17vh] lm-sm:hidden z-10 " src={getBaseUrl("/assets/images/Arcade-Time-Logo.png")}/>
-          </a>
+          </Link>
         </div>
         <div className="w-1/2 pm-md:w-2/3  lm-sm:px-12 flex flex-col justify-evenly items-center">
           <div className="w-full flex justify-evenly items-center relative">
@@ -111,28 +123,32 @@ export default function Nav() {
                     Reserve
                 </h1>
               </button>
+              <a href='tel:5027625028'>
+                <button 
+                  className=" w-[28vw] pm-md:w-[19vw] pm-md:h-[5.5vh] lm-sm:w-[10vw] pm-xl:w-[22vw] pm-xl:h-[4vh] lm-md:w-[14vw] lm-lg:w-[12vw] lm-sm:h-[5.25] lm-xl:rounded-2xl lm-md:mx-10 text-[2vh] pm-md:text-[2.5vh] lm-sm:text-[3.25vh] pm-xl:text-[2vh] pt-[.5vh] hidden pm-md:block lm-sm:block text-black font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
+                  // onClick={() => setShowEventPlanner((prev) => !prev)}
+                  >
+                    Book Event
+                </button>
+              </a>
               <button 
-                className=" w-[28vw] pm-md:w-[19vw] pm-md:h-[5.5vh] lm-sm:w-[10vw] pm-xl:w-[22vw] pm-xl:h-[4vh] lm-md:w-[14vw] lm-lg:w-[12vw] lm-sm:h-[5.25] lm-xl:rounded-2xl lm-md:mx-10 text-[2vh] pm-md:text-[2.5vh] lm-sm:text-[3.25vh] pm-xl:text-[2vh] pt-[.5vh] hidden pm-md:block lm-sm:block text-black font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
-                onClick={() => setShowEventPlanner((prev) => !prev)}>
-                  Book Event
-              </button>
-              <button 
+              ref={secondButtonRef}
               className='w-2vh lm-sm:hidden pm-xl:hidden'
-              onClick={() => setShowList((prev: any) => !prev)}>
-                <Divide color='#45f3ff' />
+              >
+                <Divide toggled={showList} toggle={setShowList} color='#45f3ff'/>
               </button>
           </div>
           <section className="text-[3vh] w-full justify-evenly z-10 relative hidden lm-sm:flex pm-xl:flex pm-xl:text-[2vh]">
-            <a href={getBaseUrl("/Eat&Play")} className="font-neon text-neonBlue hover:underline underline-offset-8">Eat & Play</a>
-            <a href={getBaseUrl("/ContactUs")} className="font-neon text-neonBlue hover:underline underline-offset-8">Contact Us</a>
-            <a className="font-neon text-neonBlue hover:underline underline-offset-8">Gallery</a>
+            <Link href={getBaseUrl("/Eat&Play")} className="font-neon text-neonBlue hover:underline underline-offset-8">Eat & Play</Link>
+            <Link href={getBaseUrl("/ContactUs")} className="font-neon text-neonBlue hover:underline underline-offset-8">Contact Us</Link>
+            {/* <a className="font-neon text-neonBlue hover:underline underline-offset-8">Gallery</a> */}
             <button onClick={() => handleToggleDropdown('dropdown4')} className="font-neon text-neonBlue hover:underline underline-offset-8">Locations</button>
             {openDropdown === 'dropdown4' && (
                 <div className="absolute p-[1vh] top-[6vh] right-[7vh] pm-xl:top-[4vh] pm-xl:right-[4vh] lm-sm:w-[25vh] lm-sm:h-[17vh] bg-slate-900 text-neonBlue font-neon rounded-lg text-[2vh] flex flex-col justify-around">
-                <a href={getBaseUrl('/locations/Jacksonville')}>Jacksonville</a>
-                <a href={getBaseUrl('/locations/Wellington')}>Wellington</a>
-                <a href={getBaseUrl('/locations/The-Falls-Mall-Miami')}>The Falls Mall Miami</a>
-                <a href={getBaseUrl('/locations/Coral-Square-Mall')}>Coral Square Mall</a>
+                  <Link href={getBaseUrl('/locations/Jacksonville')} onClick={() => handleToggleDropdown('')}>Jacksonville</Link>
+                  <Link href={getBaseUrl('/locations/Wellington')} onClick={() => handleToggleDropdown('')}>Wellington</Link>
+                  <Link href={getBaseUrl('/locations/The-Falls-Mall-Miami')} onClick={() => handleToggleDropdown('')}>The Falls Mall Miami</Link>
+                  <Link href={getBaseUrl('/locations/Coral-Square-Mall')} onClick={() => handleToggleDropdown('')}>Coral Square Mall</Link>
                 </div>
             )}
           </section>
@@ -147,15 +163,14 @@ export default function Nav() {
             </button>
             {showLocations && (
               <div className='text-neonPurple text-[4vh] flex flex-col pl-[8vw] gap-[2vh]'>
-                <a href={getBaseUrl('/locations/Jacksonville')}>Jacksonville</a>
-                <a href={getBaseUrl('/locations/Wellington')}>Wellington</a>
-                <a href={getBaseUrl('/locations/The-Falls-Mall-Miami')}>The Falls Mall Miami</a>
-                <a href={getBaseUrl('/locations/Coral-Square-Mall')}>Coral Square Mall</a>
+                  <Link href={getBaseUrl('/locations/Jacksonville')} onClick={() => setShowList(false)}>Jacksonville</Link>
+                  <Link href={getBaseUrl('/locations/Wellington')} onClick={() => setShowList(false)}>Wellington</Link>
+                  <Link href={getBaseUrl('/locations/The-Falls-Mall-Miami')} onClick={() => setShowList(false)}>The Falls Mall Miami</Link>
+                  <Link href={getBaseUrl('/locations/Coral-Square-Mall')} onClick={() => setShowList(false)}>Coral Square Mall</Link>
               </div>
             )}
-            <a href={getBaseUrl('/Eat&Play')}>Eat & Play</a>
-            <div>Gallery</div>
-            <div>Play</div>
+            <Link href={getBaseUrl('/Eat&Play')} onClick={() => setShowList(false)}>Eat & Play</Link>
+            <Link href={getBaseUrl('/ContactUs')} onClick={() => setShowList(false)}>Contact Us</Link>
             <button 
                 className=" w-[42vw] text-black self-center pm-md:hidden text-[4vh] pt-[.5vh] font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
                 onClick={() => setShowEventPlanner((prev) => !prev)}>

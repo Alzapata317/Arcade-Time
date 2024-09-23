@@ -172,7 +172,8 @@ export default function Home() {
           <img alt="" src={getBaseUrl("/assets/images/bowling.png")} className="w-full pm-sm:h-2/5 pm-md:h-1/2"/>
         </div>
       </section>
-      <section className="pm-sm:hidden pm-md:flex lm-sm:hidden lm-md:flex bg-black flex-col">
+
+      <section className="pm-sm:hidden pm-md:flex lm-sm:hidden lm-md:flex bg-slate-950 flex-col">
         <div className="w-full pm-md:h-[8vh] lm-sm:h-[15vh] flex justify-center  relative">
           <a 
             href="https://www.google.com/search?q=arcade+time+entertainment&client=safari&sca_esv=063c593922e84ff5&rls=en&ei=gS-CZuDLLb2WwbkP_rOw-AM&ved=0ahUKEwigkJbL_4SHAxU9SzABHf4ZDD8Q4dUDCBA&uact=5&oq=arcade+time+entertainment&gs_lp=Egxnd3Mtd2l6LXNlcnAiGWFyY2FkZSB0aW1lIGVudGVydGFpbm1lbnQyERAuGIAEGJECGMcBGIoFGK8BMgUQABiABDIFEAAYgAQyBRAAGIAEMgsQLhiABBjHARivATIFEAAYgAQyBRAAGIAEMiAQLhiABBiRAhjHARiKBRivARiXBRjcBBjeBBjgBNgBAUjXH1DvAlinHnACeAGQAQCYAYIBoAHDCqoBBDEzLjK4AQPIAQD4AQGYAhGgAusLwgIKEAAYsAMY1gQYR8ICCBAuGIAEGOUEwgIKEAAYgAQYQxiKBcICGhAuGIAEGMcBGK8BGJcFGNwEGN4EGOAE2AEBwgIQEC4YgAQYQxjHARiKBRivAZgDAIgGAZAGB7oGBggBEAEYFJIHBDE0LjOgB76uAQ&sclient=gws-wiz-serp#" 
