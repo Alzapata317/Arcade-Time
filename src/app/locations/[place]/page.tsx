@@ -113,7 +113,7 @@ const LocationPage: React.FC<PageProps> = ({ params }) => {
         </div>
       </div> */}
 
-      <div className='w-full h-[75vh] pm-sm:h-auto px-[8vw] py-[10vh] mb-[10vh]'>
+      <div className='w-full h-auto px-[8vw] py-[10vh] mb-[10vh]'>
         <h1 className='w-full text-center font-neon text-[8vh] text-neonYellow h-[15vh]'>Play!</h1>
         <div className='bg-slate-900 w-full flex pm-sm:flex-col-reverse justify-between h-auto rounded-2xl'>
           <div className='lm-sm:w-2/5 text-white pm-sm:text-[2vh] pm-md:text-[2.25vh] lm-sm:text-[2.5vh] flex justify-center items-center px-[3vw] pm-sm:px-[5vw] pm-sm:pb-[5vh]'>              
