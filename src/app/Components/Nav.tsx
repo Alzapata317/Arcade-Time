@@ -118,10 +118,12 @@ export default function Nav() {
                   className="h-[3.25vh] lm-sm:h-[3.5vh] pm-xl:h-[2.5vh]" 
                   src={getBaseUrl("/assets/images/Reservation.png")}
                 />
-                <h1 
-                  className="font-neon text-center self-center text-[2.5vh] pm-xl:text-[2vh] lm- pt-[.4vh] ">
-                    Reserve
-                </h1>
+                <Link href="https://www.opentable.ca/r/arcade-time-entertainment-miami" target="_blank" rel="noopener noreferrer">
+                  <h1 
+                    className="font-neon text-center self-center text-[2.5vh] pm-xl:text-[2vh] lm- pt-[.4vh] ">
+                      Reserve
+                  </h1>
+                </Link>
               </button>
               <a href='tel:5027625028'>
                 <button 
@@ -155,7 +157,7 @@ export default function Nav() {
           <img alt="" className="lm-sm:w-[30vw] lm-sm:h-[8vh] absolute bottom-0 -right-2 hidden lm-sm:block" src={getBaseUrl("/assets/images/Right-Nav.png")}/>
         </div>
         {showList && (
-          <div className='h-[100vh] w-full top-[12vh] left-0 absolute  text-neonBlue flex flex-col text-[4vh] gap-[2vh] px-[8vw] pt-[4vh] bg-slate-900'>
+          <div className='h-[100vh] w-full top-[12vh] left-0 absolute  text-neonBlue flex flex-col font-neon text-[4vh] gap-[2vh] px-[8vw] pt-[4vh] bg-slate-900'>
             <button className='text-left flex' onClick={() => setShowLocations((prev) => !prev)}>
               Locations
             <img className={`w-[4vh] ml-[2vw] pt-[1.25vh] ${showLocations == false ? '' : 'hidden'}`} src={getBaseUrl('/assets/svgs/down-arrow.png')}/>
@@ -171,11 +173,16 @@ export default function Nav() {
             )}
             <Link href={getBaseUrl('/Eat&Play')} onClick={() => setShowList(false)}>Eat & Play</Link>
             <Link href={getBaseUrl('/ContactUs')} onClick={() => setShowList(false)}>Contact Us</Link>
-            <button 
-                className=" w-[42vw] text-black self-center pm-md:hidden text-[4vh] pt-[.5vh] font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
-                onClick={() => setShowEventPlanner((prev) => !prev)}>
-                  Book Event
-            </button>
+            <div className='flex justify-center'>
+              <Link href='tel:5027625028'>
+                <button 
+                    className=" w-[42vw] text-black self-center pm-md:hidden text-[4vh] pt-[.5vh] font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
+                    // onClick={() => setShowEventPlanner((prev) => !prev)}
+                    >
+                      Book Event
+                </button>
+              </Link>
+            </div>
           </div>
         )}
     </nav>

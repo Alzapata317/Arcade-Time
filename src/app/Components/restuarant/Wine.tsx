@@ -28,7 +28,7 @@ export const Wines: Wine[] = [
 const WineGlass: React.FC<Wine> = ({name, glassPrice, bottlePrice}) => {
     return (
         <div className="w-full flex justify-between mb-[3vh] h-[7vh] text-[2.75vh] items-center">
-            <h1 className="text-neonPurple w-1/2">{name}</h1>
+            <h1 className="text-[#FF00FF] w-1/2">{name}</h1>
             <div className="w-1/2 flex">
                 <div className="w-1/2 text-center">{glassPrice === null ? "__" : "$" + glassPrice}</div>
                 <div className="w-1/2 text-center">${bottlePrice}</div>

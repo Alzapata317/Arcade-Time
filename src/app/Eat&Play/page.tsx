@@ -70,10 +70,10 @@ export default function EatPlay() {
             ))}
           </div>      
           {selectedTab === "Pizzas" && (
-            <div className="text-[#FF00FF] lm-xl:text-[1.75vh] mt-[1vh] text-neonPurple font-neon text-center pm-sm:text-[1.5vh]">All Pizzas are 16" Large Hand Made Pizzas with the freshest ingredients</div>
+            <div className="text-[#FF00FF] lm-xl:text-[1.75vh] mt-[1vh] text-[#FF00FF] font-neon text-center pm-sm:text-[1.5vh]">All Pizzas are 16" Large Hand Made Pizzas with the freshest ingredients</div>
           )}
           {(selectedTab === "Entrees" || selectedTab === "Appetizers" || selectedTab === "Salads") && (
-            <div className="text-[#FF00FF] lm-xl:text-[1.75vh] mt-[1vh] text-neonPurple font-neon text-center pm-sm:text-[1.5vh]">Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions</div>
+            <div className="text-[#FF00FF] lm-xl:text-[1.75vh] mt-[1vh] text-[#FF00FF] font-neon text-center pm-sm:text-[1.5vh]">Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions</div>
           )}
           {menuItems[selectedTab] && (
             <div className="px-[5vw] pt-[4vh] font-neon">

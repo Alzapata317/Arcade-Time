@@ -8,6 +8,7 @@ const CoverflowCarousel = dynamic(() => import('./Components/carousels/Coverflow
 import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../../context/AppContext.js";
 import Footer from "./Components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   const { showList } = useContext(AppContext);
@@ -59,7 +60,7 @@ export default function Home() {
           <div className="absolute lm-lg:top-[10vh] pm-sm:mx-[10vw] pm-md:mx-[20vw] lm-sm:left-[12vh] bg-opacity-40 bg-black lm-sm:w-[30vw] lm-md:w-[45vw] lm-lg:w-[35vw] pm-sm:h-[40vh] pm-xl:h-[35vh] lm-sm:h-[50vh] lm-lg:h-[47vh] lm-xl:h-[42vh]  pm-sm:gap-5 pm-md:gap-9 lm-sm:gap-3 lm-md:gap-9 rounded-3xl flex flex-col items-center lm-sm:p-5 lm-md:p-10 pm-sm:p-10">
             <p className="text-white font-bold pm-sm:text-[2.5vh] pm-md:text-[3vh] lm-sm:text-[4vh] lm-lg:text-[4.5vh]">“Indulge Your Senses, Every Meal, Every Time!”</p>
             <p className="text-gray-300 pm-sm:text-[1.5vh] lm-sm:text-[2vh]">Limited Time Offer: Buy One Get One Free on All Wing Orders! Come for the wings, stay for the taste. Dive into deliciousness today and double your delight!</p>
-            <button className=" bg-gradient-to-b from-neonPurple to-indigo-700 lm-sm:w-[27vw] lm-lg:w-[20vw] pm-sm:h-[6vh] pm-md:h-[6vh] pm-sm:w-[50vw] pm-md:w-[30vw] pm-xl:w-[40vw] lm-sm:h-[8vh] lm-lg:h-[7vh] rounded-3xl pm-sm:text-[2vh] lm-sm:text-[3vh] lm-xl:mt-[2vh] font-bold">Make a Reservation!</button>
+            <Link href="https://www.opentable.ca/r/arcade-time-entertainment-miami" target="_blank" rel="noopener noreferrer"><button className=" bg-gradient-to-b from-neonPurple to-indigo-700 lm-sm:w-[27vw] lm-lg:w-[20vw] pm-sm:h-[6vh] pm-md:h-[6vh] pm-sm:w-[50vw] pm-md:w-[30vw] pm-xl:w-[40vw] lm-sm:h-[8vh] lm-lg:h-[7vh] rounded-3xl pm-sm:text-[2vh] lm-sm:text-[3vh] lm-xl:mt-[2vh] font-bold">Make a Reservation!</button></Link>
           </div>
       </section>
       <section id="retro-games" className="lm-sm:h-[80vh] bg-cover relative hidden lm-sm:block" style={{ backgroundImage: `url(${getBaseUrl('/assets/images/neon-background.jpg')})` }}>
@@ -173,7 +174,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="pm-sm:hidden pm-md:flex lm-sm:hidden lm-md:flex bg-slate-950 flex-col">
+      {/* <section className="pm-sm:hidden pm-md:flex lm-sm:hidden lm-md:flex bg-slate-950 flex-col">
         <div className="w-full pm-md:h-[8vh] lm-sm:h-[15vh] flex justify-center  relative">
           <a 
             href="https://www.google.com/search?q=arcade+time+entertainment&client=safari&sca_esv=063c593922e84ff5&rls=en&ei=gS-CZuDLLb2WwbkP_rOw-AM&ved=0ahUKEwigkJbL_4SHAxU9SzABHf4ZDD8Q4dUDCBA&uact=5&oq=arcade+time+entertainment&gs_lp=Egxnd3Mtd2l6LXNlcnAiGWFyY2FkZSB0aW1lIGVudGVydGFpbm1lbnQyERAuGIAEGJECGMcBGIoFGK8BMgUQABiABDIFEAAYgAQyBRAAGIAEMgsQLhiABBjHARivATIFEAAYgAQyBRAAGIAEMiAQLhiABBiRAhjHARiKBRivARiXBRjcBBjeBBjgBNgBAUjXH1DvAlinHnACeAGQAQCYAYIBoAHDCqoBBDEzLjK4AQPIAQD4AQGYAhGgAusLwgIKEAAYsAMY1gQYR8ICCBAuGIAEGOUEwgIKEAAYgAQYQxiKBcICGhAuGIAEGMcBGK8BGJcFGNwEGN4EGOAE2AEBwgIQEC4YgAQYQxjHARiKBRivAZgDAIgGAZAGB7oGBggBEAEYFJIHBDE0LjOgB76uAQ&sclient=gws-wiz-serp#" 
@@ -182,16 +183,17 @@ export default function Home() {
           </a>
         </div>
         <CoverflowCarousel/>
-      </section>
+      </section> */}
+
       <Footer />
-      {showButton && (
+      {/* {showButton && (
         <img
           src={getBaseUrl("/assets/images/ship.png")}
           alt="Back to Top"
           className="fixed bottom-[4vh] right-[2vw] p-3 pm-sm:h-[8vh] lm-sm:h-[13vh] pm-sm:h-[10vh] pm-xl:h-[5vh] lm-md:h-[8vh] lm-lg:h-[7vh]  z-40"
           onClick={scrollToTop}
         />
-      )}
+      )} */}
     </main>
   );
 }
