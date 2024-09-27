@@ -7,6 +7,7 @@ import { getBaseUrl } from '../utils/getBaseUrl';
 import { Divide } from 'hamburger-react';
 import { AppContext } from '../../../context/AppContext';
 import Link from 'next/link';
+import CallModal from './CallModal';
 
 interface PackageOption {
     value: string;
@@ -41,7 +42,7 @@ export default function Nav() {
     const [showEventPlanner, setShowEventPlanner] = useState(false);
     const [formData, setFormData] = useState({ customOption: '', number: 1, timeOption: '', packageOption: ''});
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-    const {showList,setShowList} = useContext(AppContext);
+    const {showList, setShowList, setShowModal} = useContext(AppContext);
     const [showLocations, setShowLocations] = useState(false);
 
     const handleToggleDropdown = (dropdown: string) => {
@@ -66,17 +67,9 @@ export default function Nav() {
       };
         const secondButtonRef = useRef<HTMLButtonElement>(null);
       
-        const handleClick = () => {
-          if (secondButtonRef.current) {
-            secondButtonRef.current.click();
-          }
-        };
-      
-        const handleDivideButtonClick = () => {
-          alert('Second button clicked!');
-        };
   return (
         <nav className="shadow-neonPink lm-sm:h-[20vh] h-[12vh] flex fixed w-screen top-0 bg-black z-20">
+        <CallModal />
         {showEventPlanner && (
         <div className="pm-sm:w-full pm-md:w-[60vw] lm-sm:w-[30vw] lm-md:w-[45vw] lm-lg:w-[26vw] h-screen rounded-r-lg rounded-b-lg bg-slate-950 absolute top-0 right-0 z-30 p-8 pt-3 overflow-auto">
             <form className="pt-[4vh] pl-[.5vw]" onSubmit={handleSubmit}>
@@ -125,14 +118,14 @@ export default function Nav() {
                   </h1>
                 </Link>
               </button>
-              <a href='tel:5027625028'>
+              {/* <a> */}
                 <button 
                   className=" w-[28vw] pm-md:w-[19vw] pm-md:h-[5.5vh] lm-sm:w-[10vw] pm-xl:w-[22vw] pm-xl:h-[4vh] lm-md:w-[14vw] lm-lg:w-[12vw] lm-sm:h-[5.25] lm-xl:rounded-2xl lm-md:mx-10 text-[2vh] pm-md:text-[2.5vh] lm-sm:text-[3.25vh] pm-xl:text-[2vh] pt-[.5vh] hidden pm-md:block lm-sm:block text-black font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
-                  // onClick={() => setShowEventPlanner((prev) => !prev)}
+                  onClick={() => setShowModal((prev: any) => !prev)}
                   >
                     Book Event
                 </button>
-              </a>
+              {/* </a> */}
               <button 
               ref={secondButtonRef}
               className='w-2vh lm-sm:hidden pm-xl:hidden'
@@ -174,14 +167,14 @@ export default function Nav() {
             <Link href={getBaseUrl('/Eat&Play')} onClick={() => setShowList(false)}>Eat & Play</Link>
             <Link href={getBaseUrl('/ContactUs')} onClick={() => setShowList(false)}>Contact Us</Link>
             <div className='flex justify-center'>
-              <Link href='tel:5027625028'>
+              {/* <Link href='tel:5027625028'> */}
                 <button 
-                    className=" w-[42vw] text-black self-center pm-md:hidden text-[4vh] pt-[.5vh] font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
-                    // onClick={() => setShowEventPlanner((prev) => !prev)}
+                    className=" w-[42vw] pm-sm:hidden text-black self-center pm-md:hidden text-[4vh] pt-[.5vh] font-neon bg-violet-500 rounded-lg border-black hover:shadow-neonPurple" 
+                    onClick={() => setShowModal((prev: any) => !prev)}
                     >
                       Book Event
                 </button>
-              </Link>
+              {/* </Link> */}
             </div>
           </div>
         )}

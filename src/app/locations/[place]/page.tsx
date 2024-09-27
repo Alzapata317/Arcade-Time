@@ -157,7 +157,7 @@ const LocationPage: React.FC<PageProps> = ({ params }) => {
                 </div>
               )}
               </div>
-              <div className='w-1/3'>
+              <div className='w-full'>
                 <div className='text-[4vh] text-neonPurple'>Hours</div>
                 <div className='flex flex-col'>
                   {location.hours.map((dayHours: any, index: number) => {

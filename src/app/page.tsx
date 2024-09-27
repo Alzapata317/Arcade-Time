@@ -40,7 +40,7 @@ export default function Home() {
   };
 
   return (
-    <main className={`overflow-hidden ${showList == true ? 'hidden' : ''}`}>
+    <main className={`overflow-hidden relative ${showList == true ? 'hidden' : ''}`}>
       <section id="intro" className="h-[60vh] lm-sm:h-[80vh] w-full relative">
         <div className="h-[60vh] lm-sm:h-[80vh]  w-full bg-no-repeat bg-cover items-center flex justify-center pm-sm:hidden pm-md:flex pm-xl:hidden" style={{ backgroundImage: `url(${getBaseUrl("/assets/images/Banner1.jpg")})` }}>
         <div className="bg-[#00000080] pm-sm:px-[12vw] lm-sm:pl-24 flex flex-col items-start justify-center pm-sm:items-center  lm-sm:w-[100%] h-[60vh] lm-sm:h-[80vh]">
@@ -60,7 +60,7 @@ export default function Home() {
           <div className="absolute lm-lg:top-[10vh] pm-sm:mx-[10vw] pm-md:mx-[20vw] lm-sm:left-[12vh] bg-opacity-40 bg-black lm-sm:w-[30vw] lm-md:w-[45vw] lm-lg:w-[35vw] pm-sm:h-[40vh] pm-xl:h-[35vh] lm-sm:h-[50vh] lm-lg:h-[47vh] lm-xl:h-[42vh]  pm-sm:gap-5 pm-md:gap-9 lm-sm:gap-3 lm-md:gap-9 rounded-3xl flex flex-col items-center lm-sm:p-5 lm-md:p-10 pm-sm:p-10">
             <p className="text-white font-bold pm-sm:text-[2.5vh] pm-md:text-[3vh] lm-sm:text-[4vh] lm-lg:text-[4.5vh]">“Indulge Your Senses, Every Meal, Every Time!”</p>
             <p className="text-gray-300 pm-sm:text-[1.5vh] lm-sm:text-[2vh]">Limited Time Offer: Buy One Get One Free on All Wing Orders! Come for the wings, stay for the taste. Dive into deliciousness today and double your delight!</p>
-            <Link href="https://www.opentable.ca/r/arcade-time-entertainment-miami" target="_blank" rel="noopener noreferrer"><button className=" bg-gradient-to-b from-neonPurple to-indigo-700 lm-sm:w-[27vw] lm-lg:w-[20vw] pm-sm:h-[6vh] pm-md:h-[6vh] pm-sm:w-[50vw] pm-md:w-[30vw] pm-xl:w-[40vw] lm-sm:h-[8vh] lm-lg:h-[7vh] rounded-3xl pm-sm:text-[2vh] lm-sm:text-[3vh] lm-xl:mt-[2vh] font-bold">Make a Reservation!</button></Link>
+            <Link href="https://www.opentable.ca/r/arcade-time-entertainment-miami" target="_blank" rel="noopener noreferrer"><button className=" bg-gradient-to-b from-neonPurple to-indigo-700 lm-sm:w-[27vw] lm-lg:w-[20vw] pm-sm:h-[6vh] pm-md:h-[6vh] pm-sm:w-[50vw] pm-md:w-[30vw] pm-xl:w-[40vw] lm-sm:h-[8vh] lm-lg:h-[7vh] rounded-2xl pm-sm:text-[2vh] lm-sm:text-[3vh] lm-xl:mt-[2vh] font-bold">Make a Reservation!</button></Link>
           </div>
       </section>
       <section id="retro-games" className="lm-sm:h-[80vh] bg-cover relative hidden lm-sm:block" style={{ backgroundImage: `url(${getBaseUrl('/assets/images/neon-background.jpg')})` }}>
