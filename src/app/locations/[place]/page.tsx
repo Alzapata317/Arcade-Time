@@ -74,7 +74,7 @@ const LocationPage: React.FC<PageProps> = ({ params }) => {
           <div className="h-2/5 text-neonYellow pm-sm:text-[5.5vh] pm-md:text-[8vh] lm-sm:text-[9vh] font-neon text-center flex justify-center items-center">
             {location.place.replace(/-/g, " ")} 
           </div>
-          <div className='text-white text-center pm-sm:text-[2vh] pm-md:text-[2.5vh] text-[3vh] h-3/5 px-[10vw]'>{location.description}</div>
+          <div className='text-white text-center pm-sm:text-[2vh] pm-md:text-[2.5vh] text-[3vh] h-3/5 px-[10vw] pm-xl:text-[2.25vh]'>{location.description}</div>
         </div>
       </div>
 
@@ -157,7 +157,7 @@ const LocationPage: React.FC<PageProps> = ({ params }) => {
                 </div>
               )}
               </div>
-              <div className='w-full'>
+              <div className={location.eventImg ? 'w-full' : 'w-1/3'}>
                 <div className='text-[4vh] text-neonPurple'>Hours</div>
                 <div className='flex flex-col'>
                   {location.hours.map((dayHours: any, index: number) => {

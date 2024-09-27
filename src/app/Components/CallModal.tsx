@@ -22,7 +22,7 @@ export default function CallModal() {
             className="fixed inset-0 bg-slate-900 bg-opacity-50 flex justify-center items-center z-20"
             onClick={handleClickOutside}
           >
-            <div ref={modalRef} className="relative bg-slate-900 p-6 rounded-2xl shadow-lg w-[45vw] pm-md:w-[65vw] lm-md:w-[55vw] h-[44vh] pm-md:h-[63vh] pt-[2vh]">
+            <div ref={modalRef} className="relative bg-slate-900 p-6 rounded-2xl shadow-lg w-[45vw] pm-md:w-[65vw] lm-md:w-[55vw] h-[44vh] pm-md:h-[63vh] pm-xl:h-[58vh] lm-xl:h-[40vh] pt-[2vh]">
               <button
                   className="absolute top-[2.7vh] right-[2.25vw] pm-md:right-[4vw] text-neonBlue  rounded font-neon text-[4vh] hover:text-neonYellow"
                   onClick={() => setShowModal(false)}
@@ -35,7 +35,7 @@ export default function CallModal() {
                   <p className="text-neonPurple font-neon text-[3.5vh] pm-md:text-center">The Falls Mall Miami</p>
                   <a className="self-center" href="tel:(786)-250-3165">
                     <button 
-                      className="bg-black lm-md:w-[20vw] font-neon text-neonBlue text-[2.5vh] h-[5vh] w-[15vw] pm-md:w-[35vw] border-2 border-neonBlue rounded-xl flex justify-evenly items-center hover:border-neonYellow hover:text-neonYellow" 
+                      className="bg-black lm-md:w-[20vw] font-neon text-neonBlue text-[2.5vh] pm-xl:text-[2.25vh] h-[5vh] w-[15vw] pm-md:w-[35vw] pm-xl:w-[38vw] border-2 border-neonBlue rounded-xl flex justify-evenly items-center hover:border-neonYellow hover:text-neonYellow" 
                       onMouseEnter={() => setIsHovered("1")}
                       onMouseLeave={() => setIsHovered("")}
                     >
@@ -48,7 +48,7 @@ export default function CallModal() {
                   <p className="text-neonPurple font-neon text-[3.5vh] pm-md:text-center">Coral Square Mall</p>
                   <a className="pm-md:self-center" href="tel:(954)-312-9663">
                     <button 
-                      className="bg-black lm-md:w-[20vw] font-neon text-neonBlue text-[2.5vh] h-[5vh] w-[15vw] pm-md:w-[35vw] border-2 border-neonBlue rounded-xl flex justify-evenly items-center hover:border-neonYellow hover:text-neonYellow" 
+                      className="bg-black lm-md:w-[20vw] font-neon text-neonBlue text-[2.5vh] pm-xl:text-[2.25vh] h-[5vh] w-[15vw] pm-md:w-[35vw] pm-xl:w-[38vw] border-2 border-neonBlue rounded-xl flex justify-evenly items-center hover:border-neonYellow hover:text-neonYellow" 
                       onMouseEnter={() => setIsHovered("2")}
                       onMouseLeave={() => setIsHovered("")}
                     >
@@ -61,7 +61,7 @@ export default function CallModal() {
                   <p className="text-neonPurple font-neon text-[3.5vh] pm-md:text-center">Wellington</p>
                   <a className="pm-md:self-center" href="tel:(561)-247-8463">
                     <button 
-                      className="bg-black lm-md:w-[20vw] font-neon text-neonBlue text-[2.5vh] h-[5vh] w-[15vw] pm-md:w-[35vw] border-2 border-neonBlue rounded-xl flex justify-evenly items-center hover:border-neonYellow hover:text-neonYellow" 
+                      className="bg-black lm-md:w-[20vw] font-neon text-neonBlue text-[2.5vh] pm-xl:text-[2.25vh] h-[5vh] w-[15vw] pm-md:w-[35vw] pm-xl:w-[38vw] border-2 border-neonBlue rounded-xl flex justify-evenly items-center hover:border-neonYellow hover:text-neonYellow" 
                       onMouseEnter={() => setIsHovered("3")}
                       onMouseLeave={() => setIsHovered("")}
                     >
@@ -74,7 +74,7 @@ export default function CallModal() {
                   <p className="text-neonPurple font-neon text-[3.5vh] pm-md:text-center">Jacksonville</p>
                   <a className="pm-md:self-center" href="tel:(904)-365-8463">
                     <button 
-                      className="bg-black lm-md:w-[20vw] font-neon text-neonBlue text-[2.5vh] h-[5vh] w-[15vw] pm-md:w-[35vw] border-2 border-neonBlue rounded-xl flex justify-evenly items-center hover:border-neonYellow hover:text-neonYellow" 
+                      className="bg-black lm-md:w-[20vw] font-neon text-neonBlue text-[2.5vh] pm-xl:text-[2.25vh] h-[5vh] w-[15vw] pm-md:w-[35vw] pm-xl:w-[38vw] border-2 border-neonBlue rounded-xl flex justify-evenly items-center hover:border-neonYellow hover:text-neonYellow" 
                       onMouseEnter={() => setIsHovered("4")}
                       onMouseLeave={() => setIsHovered("")}
                     >

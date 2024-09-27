@@ -14,10 +14,10 @@ export default function Footer() {
         <div className="flex flex-col pm-sm:w-full pm-md:w-2/5 w-2/5 h-full justify-center">
           <p className="w-full text-center text-neonBlue font-neon pm-sm:text-[3.5vh] lm-sm:text-[3.5vh] my-[1vh]">Follow Us!</p>
           <div className="w-full flex justify-around">
-            <a href="https://www.instagram.com/arcadetimeusa/"><img  className="pm-sm:w-[10vw] pm-md:w-[6vw] lm-sm:w-[3vw]" alt="" src={getBaseUrl("/assets/svgs/instagram.svg")}/></a>
-            <a href="https://www.facebook.com/arcadetimeusa"><img  className="pm-sm:w-[10vw] pm-md:w-[6vw] lm-sm:w-[3vw]" src={getBaseUrl("/assets/svgs/facebook.svg")} alt="FaceBook Logo"/></a>
-            <a href="https://www.x.com/arcadetimeusa"><img  className="pm-sm:w-[10vw] pm-md:w-[6vw] lm-sm:w-[3vw]" alt="" src={getBaseUrl("/assets/svgs/x.svg")}/></a>
-            <a href="https://www.youtube.com//channel/UCJs4X_bUgUE5iNtH-GvLKNg"><img  className="pm-sm:w-[10vw] pm-md:w-[6vw] lm-sm:w-[3vw]" alt="" src={getBaseUrl("/assets/svgs/youtube.svg")}/></a>
+            <Link href="https://www.instagram.com/arcadetimeusa/"><img  className="pm-sm:w-[10vw] pm-md:w-[6vw] lm-sm:w-[3vw]" alt="" src={getBaseUrl("/assets/svgs/instagram.svg")}/></Link>
+            <Link href="https://www.facebook.com/arcadetimeusa"><img  className="pm-sm:w-[10vw] pm-md:w-[6vw] lm-sm:w-[3vw]" src={getBaseUrl("/assets/svgs/facebook.svg")} alt="FaceBook Logo"/></Link>
+            <Link href="https://www.x.com/arcadetimeusa"><img  className="pm-sm:w-[10vw] pm-md:w-[6vw] lm-sm:w-[3vw]" alt="" src={getBaseUrl("/assets/svgs/x.svg")}/></Link>
+            <Link href="https://www.youtube.com//channel/UCJs4X_bUgUE5iNtH-GvLKNg"><img  className="pm-sm:w-[10vw] pm-md:w-[6vw] lm-sm:w-[3vw]" alt="" src={getBaseUrl("/assets/svgs/youtube.svg")}/></Link>
           </div>
         </div>
         <div className="pm-sm:w-full pm-md:w-3/5 pm-md:pl-[5vw] w-3/5 flex pm-sm:flex-col pm-md:flex-row justify-center">
