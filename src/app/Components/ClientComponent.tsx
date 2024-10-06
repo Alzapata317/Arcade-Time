@@ -33,7 +33,7 @@ export const ClientComponent = ({ children }: { children: React.ReactNode }) => 
   return (
     <>
         <GlobalStyles />
-        <Nav />
+        {/* <Nav /> */}
         <div className="mt-[12vh] lm-sm:mt-[20vh]">
             {children}
         </div>
